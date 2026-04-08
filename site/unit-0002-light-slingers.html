@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Light Slingers — Unit — Structures Wiki</title>
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #374151;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .muted { color: var(--muted); }
+    .kv {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px 16px;
+      margin: 8px 0;
+    }
+    .kv div:nth-child(odd) { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      background: #1d4ed8;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: var(--text);
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 6px;
+      vertical-align: top;
+    }
+    .small { font-size: 13px; }
+    .wiki-nav { margin-bottom: 12px; font-size: 15px; }
+    .jump-index { margin-bottom: 14px; line-height: 1.8; }
+    .jump-index a { margin-right: 10px; white-space: nowrap; }
+    section.job-group { scroll-margin-top: 16px; }
+    tr.structure-gateway {
+      background: rgba(59, 130, 246, 0.14);
+      font-weight: 600;
+    }
+    tr.structure-gateway td {
+      border-bottom-color: rgba(59, 130, 246, 0.35);
+    }
+    tr.structure-gateway td:first-child {
+      font-weight: 700;
+      border-left: 3px solid #3b82f6;
+      padding-left: 10px;
+    }
+    .badge-imped { background: #b45309; }
+    .badge-perk { background: #15803d; }
+    .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
+    code { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    
+    <p class="wiki-nav">
+      <a href="index.html" class="muted">Buildings</a>
+      <span class="muted"> · </span>
+      <a href="impediments.html" class="muted">Impediments</a>
+      <span class="muted"> · </span>
+      <a href="perks.html" class="muted">Perks</a>
+      <span class="muted"> · </span>
+      <a href="resources.html" class="muted">Resources</a>
+      <span class="muted"> · </span>
+      <a href="units.html">Units</a>
+    </p>
+
+    <h1>Light Slingers</h1>
+    <p class="muted">Unit ID: 2 · <a href="units.html">All units</a></p>
+    <div class="card">
+      <h2>Description</h2>
+      <p>IDS_UNI_TEXT_SLINGERS0, &quot;NULL&quot;,</p>
+    </div>
+    <div class="card">
+      <h2>All unit data (UNITS.CSV)</h2>
+      <table class="small">
+        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+        <tbody><tr><td>ID</td><td>2</td></tr><tr><td>All_at_0</td><td>0</td></tr><tr><td>BaseName</td><td>SLINGERS0</td></tr><tr><td>Name - English Localization</td><td>Light Slingers</td></tr><tr><td>Alias</td><td>ID_UNI_SLINGERS0</td></tr><tr><td>$Alias</td><td>$ID_UNI_SLINGERS0</td></tr><tr><td>Name</td><td>IDS_UNI_NAME_SLINGERS0</td></tr><tr><td>Name (EndResult) - English Localization</td><td>IDS_UNI_NAME_SLINGERS0, &quot;Light Slingers&quot;,</td></tr><tr><td>Text</td><td>IDS_NULL</td></tr><tr><td>Text - English Localization</td><td>NULL</td></tr><tr><td>Text (EndResult) - English Localization</td><td>IDS_UNI_TEXT_SLINGERS0, &quot;NULL&quot;,</td></tr><tr><td>Family</td><td>$famSkirmisher</td></tr><tr><td>BASE</td><td>Light Slingers</td></tr><tr><td>FOG2 Display Name</td><td>Slingers</td></tr><tr><td>FOG_ID</td><td>93</td></tr><tr><td>FOG2 Type</td><td>Light_Foot</td></tr><tr><td>FOG2_Name</td><td>Barbarian_Light_Slingers</td></tr><tr><td>SecondType</td><td>NULL</td></tr><tr><td>Perc2ndType</td><td>0</td></tr><tr><td>AssetFileName</td><td>barb_slingers</td></tr><tr><td>AGEOD_Cost</td><td>92</td></tr><tr><td>CamOffsetX</td><td>0</td></tr><tr><td>CamOffsetY</td><td>0</td></tr><tr><td>CamOffsetZ</td><td>0</td></tr><tr><td>CamRot</td><td>0</td></tr><tr><td>FOG&amp;CAM</td><td>Light Slingers</td></tr><tr><td>Family - Duplicate</td><td>$famSkirmisher</td></tr><tr><td>EvolveFamily</td><td>0</td></tr><tr><td>EvolvePriority</td><td>5</td></tr><tr><td>UpgradePrev</td><td>0</td></tr><tr><td>UpgradeNext</td><td>0</td></tr><tr><td>AssaultDistanceToCenter</td><td>38</td></tr><tr><td>DTC_Open</td><td>40</td></tr><tr><td>DTC_Wild</td><td>38</td></tr><tr><td>DTC_Rough</td><td>38</td></tr><tr><td>DTC_Mountains</td><td>40</td></tr><tr><td>Professionalism</td><td>$UNIT_PRO_LEVY</td></tr><tr><td>MoveSpeed</td><td>6</td></tr><tr><td>Hits</td><td>1</td></tr><tr><td>Effectiveness</td><td>3</td></tr><tr><td>Attack</td><td>2</td></tr><tr><td>Defense</td><td>2</td></tr><tr><td>IsSupport</td><td>1</td></tr><tr><td>Siege</td><td>1</td></tr><tr><td>SiegeResist</td><td>3</td></tr><tr><td>SupplyUsage</td><td>1</td></tr><tr><td>AttackingRange</td><td>0</td></tr><tr><td>RangedAttack</td><td>5</td></tr><tr><td>RangedDefense</td><td>3</td></tr><tr><td>RangedMaxDamages</td><td>1</td></tr><tr><td>FlankingModifier</td><td>1</td></tr><tr><td>AtkAssaultChg</td><td>0</td></tr><tr><td>DefAssaultChg</td><td>1</td></tr><tr><td>FOG2_QualityMOD</td><td>100</td></tr><tr><td>Rating</td><td>46</td></tr><tr><td>Ratio: AGEOD Cbt Rating / FOG2M Cost</td><td>1.92</td></tr><tr><td>AGCost_Copy</td><td>92</td></tr><tr><td>Ratio</td><td>3.83</td></tr><tr><td>FOGM Weaponry</td><td>Sling 1</td></tr><tr><td>Speed</td><td>600</td></tr><tr><td>FOG2_Cost</td><td>24</td></tr><tr><td>Men</td><td>240</td></tr><tr><td>XP/Elan</td><td>100</td></tr><tr><td>BodyArmor</td><td>0</td></tr><tr><td>STATS</td><td>Light Slingers</td></tr><tr><td>Modifier[0]</td><td>$ID_MOD_UNIT_SKIRMISHER2</td></tr><tr><td>Val0</td><td>6</td></tr><tr><td>Modifier[1]</td><td>$ID_MOD_UNIT_AGILE</td></tr><tr><td>Val1</td><td>3</td></tr><tr><td>Modifier[2]</td><td>-1</td></tr><tr><td>Val2</td><td>0</td></tr><tr><td>Modifier[3]</td><td>-1</td></tr><tr><td>Val3</td><td>0</td></tr><tr><td>MODIFIERS</td><td>Light Slingers</td></tr><tr><td>NotBuildable</td><td>0</td></tr><tr><td>BuildPointsCost</td><td>8</td></tr><tr><td>ManpowerCost</td><td>15</td></tr><tr><td>MoneyCost</td><td>6</td></tr><tr><td>MetalCost</td><td>0</td></tr><tr><td>ManpowerUpkeep</td><td>5</td></tr><tr><td>MoneyUpkeep</td><td>3</td></tr><tr><td>MetalUpkeep</td><td>0</td></tr><tr><td>MoneyInflationCost</td><td>0</td></tr><tr><td>AmountRes[0]</td><td>0</td></tr><tr><td>ShipyardNeed</td><td>0</td></tr><tr><td>Recruit_Weight</td><td>300</td></tr><tr><td>RecruitArea</td><td>-1</td></tr><tr><td>RequiredStructures[]</td><td>-1</td></tr><tr><td>NationalUnique</td><td>0</td></tr><tr><td>RECRUIT</td><td>Light Slingers</td></tr><tr><td>ProgRate</td><td>50</td></tr><tr><td>InitialXPLevel</td><td>0</td></tr><tr><td>Garrison_Category</td><td>$GAR_LIGHT</td></tr><tr><td>Regular_Modifier</td><td>0</td></tr><tr><td>Experienced_Modifier</td><td>0</td></tr><tr><td>Veteran_Modifier</td><td>0</td></tr><tr><td>Elite_Modifier</td><td>0</td></tr><tr><td>VARIOUS</td><td>Light Slingers</td></tr></tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

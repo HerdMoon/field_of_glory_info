@@ -1,0 +1,9 @@
+# Track only GitHub Pages content and workflow
+*
+
+!.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/deploy-pages.yml
+!site/
+!site/**

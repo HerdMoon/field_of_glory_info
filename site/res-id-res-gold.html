@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gold — Resource — Structures Wiki</title>
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #374151;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .muted { color: var(--muted); }
+    .kv {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px 16px;
+      margin: 8px 0;
+    }
+    .kv div:nth-child(odd) { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      background: #1d4ed8;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: var(--text);
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 6px;
+      vertical-align: top;
+    }
+    .small { font-size: 13px; }
+    .wiki-nav { margin-bottom: 12px; font-size: 15px; }
+    .jump-index { margin-bottom: 14px; line-height: 1.8; }
+    .jump-index a { margin-right: 10px; white-space: nowrap; }
+    section.job-group { scroll-margin-top: 16px; }
+    tr.structure-gateway {
+      background: rgba(59, 130, 246, 0.14);
+      font-weight: 600;
+    }
+    tr.structure-gateway td {
+      border-bottom-color: rgba(59, 130, 246, 0.35);
+    }
+    tr.structure-gateway td:first-child {
+      font-weight: 700;
+      border-left: 3px solid #3b82f6;
+      padding-left: 10px;
+    }
+    .badge-imped { background: #b45309; }
+    .badge-perk { background: #15803d; }
+    .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
+    code { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    
+    <p class="wiki-nav">
+      <a href="index.html" class="muted">Buildings</a>
+      <span class="muted"> · </span>
+      <a href="impediments.html" class="muted">Impediments</a>
+      <span class="muted"> · </span>
+      <a href="perks.html" class="muted">Perks</a>
+      <span class="muted"> · </span>
+      <a href="resources.html">Resources</a>
+      <span class="muted"> · </span>
+      <a href="units.html" class="muted">Units</a>
+    </p>
+
+    <h1>Gold</h1>
+    <p class="muted"><code>ID_RES_GOLD</code> · <a href="resources.html">All resources</a></p>
+    <div class="card">
+      <h2>Resource data</h2>
+      <p class="small muted">From RESOURCES.CSV</p>
+      <table class="small">
+        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Base value</td><td>8</td></tr>
+          <tr><td>IsNatural</td><td>No</td></tr><tr><td>IsAgricultural</td><td>No</td></tr><tr><td>IsMining</td><td>Yes</td></tr><tr><td>IsManufactured</td><td>No</td></tr><tr><td>IsLuxuries</td><td>No</td></tr><tr><td>IsStrategic</td><td>No</td></tr><tr><td>IsCoastal</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Structures using this resource</h2>
+      <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
+      <h3>Mandatory regional resource</h3><p class='muted'>None</p>
+      <h3>Input (consumed)</h3><ul class='small'><li><a href="0486-royal-khalwa.html">Royal Khalwa</a></li><li><a href="0487-reliquary.html">Reliquary</a></li><li><a href="0852-royal-mint.html">Royal Mint</a></li></ul>
+      <h3>Output (produced)</h3><ul class='small'><li><a href="0872-surface-gold-mining.html">Surface Gold Mining</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0156-gold-mine.html">Gold Mine</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0265-emporium-depot-gold.html">Emporium Depot - Gold</a> <span class="muted small">(Output_Resource)</span></li></ul>
+      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0746-shilpashala.html">Shilpashala</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0215-thieves-gang.html">Thieves Gang</a> <span class="badge badge-imped">Impediment</span> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income -3</span></li><li><a href="0216-thieves-hideout.html">Thieves Hideout</a> <span class="badge badge-imped">Impediment</span> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income -6</span></li><li><a href="0217-thieves-guild.html">Thieves Guild</a> <span class="badge badge-imped">Impediment</span> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income -9</span></li><li><a href="0218-underground-network.html">Underground Network</a> <span class="badge badge-imped">Impediment</span> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income -15</span></li><li><a href="0219-usurer.html">Usurer</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Piety -1, Bonus_Steward 1</span></li><li><a href="0236-black-market.html">Black Market</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 5, Bonus_Piety -1, Bonus_Steward -1</span></li><li><a href="0237-jewelry-shop.html">Jewelry Shop</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Steward 2</span></li><li><a href="0241-troubadours.html">Troubadours</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4</span></li><li><a href="0244-bank.html">Bank</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4</span></li><li><a href="0247-money-changer.html">Money Changer</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0444-religious-preceptor.html">Religious Preceptor</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 3</span></li><li><a href="0486-royal-khalwa.html">Royal Khalwa</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -10, Bonus_Piety 6, Bonus_Steward 8</span></li><li><a href="0721-rock-hewn-large-church.html">Rock-Hewn Large Church</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -2, Bonus_Piety 5</span></li><li><a href="0517-chief-house.html">Chief House</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 2</span></li><li><a href="0712-wedding-ceremony.html">Wedding Ceremony</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -2, Bonus_Steward 2</span></li><li><a href="0535-alcazar.html">Alcazar</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra -1, Bonus_Income -2, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0758-rajavithi.html">Rajavithi</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra -1, Bonus_Income -2, Bonus_Steward 7</span></li><li><a href="0537-byzantine-domain-court.html">Byzantine Domain Court</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 2</span></li><li><a href="0539-modest-palace.html">Modest Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Steward 5</span></li><li><a href="0540-king-s-residence.html">King&#x27;s Residence</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4, Bonus_Steward 5</span></li><li><a href="0541-noble-s-residence.html">Noble&#x27;s Residence</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4, Bonus_Steward 4</span></li><li><a href="0542-elected-council.html">Elected Council</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 5</span></li><li><a href="0544-palace.html">Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 7</span></li><li><a href="0545-great-tribal-council.html">Great Tribal Council</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Food 8, Bonus_Income 6, Bonus_Steward 6</span></li><li><a href="0546-nomadic-palace.html">Nomadic Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 6, Bonus_Food 6, Bonus_Steward 8</span></li><li><a href="0547-emperor-s-palace.html">Emperor&#x27;s Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4, Bonus_Steward 12</span></li><li><a href="0548-great-palace.html">Great Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 10</span></li><li><a href="0559-tax-collector.html">Tax Collector</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0569-city-watch.html">City Watch</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Steward -3</span></li><li><a href="0571-king-s-agent.html">King&#x27;s Agent</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -3, Bonus_Steward 3</span></li><li><a href="0572-courthouse.html">Courthouse</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 5, Bonus_Steward -3</span></li><li><a href="0573-harem.html">Harem</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -4, Bonus_Steward 4</span></li><li><a href="0576-summer-palace.html">Summer Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -3, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0577-winter-palace.html">Winter Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -4, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0578-summer-palace.html">Summer Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -3, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0579-winter-palace.html">Winter Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -4, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0580-summer-palace.html">Summer Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -3, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0581-winter-palace.html">Winter Palace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income -4, Bonus_Manpower -1, Bonus_Steward 7</span></li><li><a href="0852-royal-mint.html">Royal Mint</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 75</span></li><li><a href="0856-diwan-al-kharaj-tax-office.html">Diwan al-Kharaj (Tax Office)</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 15</span></li></ul>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chief House</title>
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #374151;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .muted { color: var(--muted); }
+    .kv {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px 16px;
+      margin: 8px 0;
+    }
+    .kv div:nth-child(odd) { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      background: #1d4ed8;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: var(--text);
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 6px;
+      vertical-align: top;
+    }
+    .small { font-size: 13px; }
+    .wiki-nav { margin-bottom: 12px; font-size: 15px; }
+    .jump-index { margin-bottom: 14px; line-height: 1.8; }
+    .jump-index a { margin-right: 10px; white-space: nowrap; }
+    section.job-group { scroll-margin-top: 16px; }
+    tr.structure-gateway {
+      background: rgba(59, 130, 246, 0.14);
+      font-weight: 600;
+    }
+    tr.structure-gateway td {
+      border-bottom-color: rgba(59, 130, 246, 0.35);
+    }
+    tr.structure-gateway td:first-child {
+      font-weight: 700;
+      border-left: 3px solid #3b82f6;
+      padding-left: 10px;
+    }
+    .badge-imped { background: #b45309; }
+    .badge-perk { background: #15803d; }
+    .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
+    code { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    
+    <p class="wiki-nav">
+      <a href="index.html">Buildings</a>
+      <span class="muted"> · </span>
+      <a href="impediments.html">Impediments</a>
+      <span class="muted"> · </span>
+      <a href="perks.html">Perks</a>
+      <span class="muted"> · </span>
+      <a href="resources.html">Resources</a>
+      <span class="muted"> · </span>
+      <a href="units.html">Units</a>
+    </p>
+
+    <h1>Chief House</h1>
+    <p><span class="badge">1</span><span class="badge">Stewardship</span><span class="badge">Stewardship</span><span class="badge">Job Kind Govern</span></p>
+    <div class="card">
+      <h2>Description</h2>
+      <p>Tribal and nomads people are organized around small communities led by a chief or local warlord, often ruling over at most a few dozens families. It asks for a lot of charisma, luck, shrewdness to manage unifying them into a bigger entity. This organizational construct remains not very stable and will often collapse when the warchief dies.</p>
+    </div>
+    <div class="card">
+      <h2>Core data</h2>
+      <div class="kv small">
+        <div>ID</div><div>517</div>
+        <div>Alias</div><div>ID_STRUC_TN_CHIEF_HOUSE</div>
+        <div>$Alias</div><div>$ID_STRUC_TN_CHIEF_HOUSE</div>
+        <div>Tier</div><div>1</div>
+        <div>Job</div><div>Stewardship <span class='small muted'>($POP_JOB_STEWARD)</span></div>
+        <div>SubJob</div><div>Stewardship <span class='small muted'>($JOB_KIND_STEWARD)</span></div>
+        <div>Christian available</div><div>No</div>
+        <div>Muslim available</div><div>No</div>
+        <div>TN / Tribe available</div><div>Yes</div>
+        <div>DisplayOrder</div><div>0</div>
+        <div>Style color</div><div>$Col_DodgerBlue1</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Design and constraints</h2>
+      <div class="kv small">
+        <div>Notable points</div><div>AG1hi Sws250 FURS-, Trsv12 Auth+</div>
+        <div>DLC notes</div><div>New:  Auth+</div>
+        <div>Constraints</div><div>Chief House</div>
+        <div>Minimum population</div><div>3</div>
+        <div>Region max buildings</div><div>1</div>
+        <div>Minimum piety</div><div>-</div>
+        <div>Minimum stewardship</div><div>250</div>
+        <div>Required area</div><div>-</div>
+        <div>Required terrain</div><div>-</div>
+        <div>Forbidden terrain</div><div>-</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Type and economy</h2>
+      <div class="kv small">
+        <div>Tier</div><div>1</div>
+        <div>Is depot</div><div>No</div>
+        <div>Is fort</div><div>No</div>
+        <div>Is city structure</div><div>No</div>
+        <div>Is harbor</div><div>No</div>
+        <div>Authority gain</div><div>0</div>
+        <div>Legacy gain / turn</div><div>0</div>
+        <div>Slot usage cost</div><div>1</div>
+        <div>Infrastructure cost</div><div>125</div>
+        <div>Infrastructure upkeep</div><div>2</div>
+        <div>Money upkeep</div><div>2</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Resources</h2>
+      <table class="small">
+        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+        <tbody><tr><td>Input_Resource</td><td>Furs &amp; Pelts</td></tr><tr><td>BonusResource[0]</td><td>Horses</td></tr><tr><td>BonusResource[1]</td><td>Gold</td></tr><tr><td>BonusResource[2]</td><td>Silver</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Outputs</h2>
+      <table class="small">
+        <thead><tr><th>Output field</th><th>Value</th></tr></thead>
+        <tbody><tr><td>MBP_Output</td><td>5</td></tr><tr><td>Manpower_Output</td><td>2</td></tr><tr><td>Steward_Output</td><td>8</td></tr></tbody>
+      </table>
+      <h3>Bonus outputs</h3>
+      <table class="small">
+        <thead><tr><th>Bonus field</th><th>Value</th></tr></thead>
+        <tbody><tr><td>Bonus_Steward</td><td>2</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Building tree</h2>
+      <div class="kv small">
+        <div>Requires</div><div><span class='muted'>None</span></div>
+        <div>Upgrades to</div><div><span class='muted'>None</span></div>
+        <div>Replaces</div><div><span class='muted'>None</span></div>
+        <div>Forbidden with</div><div><span class='muted'>None</span></div>
+        <div>Used by (reverse dependencies)</div><div><a href="0518-modest-statue.html">Modest Statue</a>, <a href="0519-sworn-forester.html">Sworn Forester</a>, <a href="0520-sheriff.html">Sheriff</a>, <a href="0521-lord-s-tribunal.html">Lord&#x27;s Tribunal</a>, <a href="0522-theme-s-tribunal.html">Theme&#x27;s Tribunal</a>, <a href="0523-tribal-tribunal.html">Tribal Tribunal</a>, <a href="0524-qadi-s-tribunal.html">Qadi&#x27;s Tribunal</a>, <a href="0525-gallows.html">Gallows</a>, <a href="0711-public-execution.html">Public Execution</a>, <a href="0526-diya-perceptor.html">Diya Perceptor</a>, <a href="0527-stocks.html">Stocks</a>, <a href="0528-gald-executioner.html">Gald Executioner</a>, <a href="0529-night-watch.html">Night Watch</a>, <a href="0530-warchief-s-guards.html">Warchief&#x27;s Guards</a>, <a href="0531-town-jail.html">Town Jail</a>, <a href="0532-king-s-herald.html">King&#x27;s Herald</a>, <a href="0533-runner-relay.html">Runner Relay</a>, <a href="0712-wedding-ceremony.html">Wedding Ceremony</a>, <a href="0534-hunting-grounds.html">Hunting Grounds</a>, <a href="0535-alcazar.html">Alcazar</a>, <a href="0758-rajavithi.html">Rajavithi</a>, <a href="0846-yam-station.html">Yam Station</a>, <a href="0552-lord-s-kennel.html">Lord&#x27;s Kennel</a>, <a href="0553-feudal-town.html">Feudal Town</a>, <a href="0554-medieval-town.html">Medieval Town</a>, <a href="0556-dungeon.html">Dungeon</a>, <a href="0558-king-s-envoy.html">King&#x27;s Envoy</a>, <a href="0559-tax-collector.html">Tax Collector</a>, <a href="0560-shanty-town.html">Shanty Town</a>, <a href="0561-medina.html">Medina</a>, <a href="0562-lord-s-manor.html">Lord&#x27;s Manor</a>, <a href="0760-samanta-residence.html">Samanta Residence</a>, <a href="0563-emir-residence.html">Emir Residence</a>, <a href="0576-summer-palace.html">Summer Palace</a>, <a href="0577-winter-palace.html">Winter Palace</a>, <a href="0578-summer-palace.html">Summer Palace</a>, <a href="0579-winter-palace.html">Winter Palace</a>, <a href="0580-summer-palace.html">Summer Palace</a>, <a href="0581-winter-palace.html">Winter Palace</a></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Military / garrison links</h2>
+      <div class="kv small">
+        <div>Garrison category</div><div>$GAR_HEAVY</div>
+        <div>Units in this garrison category</div><div><a href="unit-0104-rodeleros.html">Rodeleros</a>, <a href="unit-0064-dismounted-hobilars.html">Dismounted Hobilars</a>, <a href="unit-0065-hussite-wagon-soldiers.html">Hussite Wagon Soldiers</a>, <a href="unit-0066-veteran-war-wagon-soldiers.html">Veteran War Wagon Soldiers</a>, <a href="unit-0067-war-wagon-soldiers-deployed.html">War Wagon Soldiers (Deployed)</a>, <a href="unit-0068-veteran-war-wagon-soldiers-deployed.html">Veteran War Wagon Soldiers (Deployed)</a>, <a href="unit-0072-generic-heavy-infantry.html">Generic Heavy Infantry</a>, <a href="unit-0078-billmen.html">Billmen</a>, <a href="unit-0079-raw-levy-billmen.html">Raw Levy Billmen</a>, <a href="unit-0437-seasoned-levy-billmen.html">Seasoned Levy Billmen</a>, <a href="unit-0080-voynuks.html">Voynuks</a>, <a href="unit-0081-armoured-spearmen-defensive.html">Armoured Spearmen (Defensive)</a>, <a href="unit-0082-spearmen-defensive.html">Spearmen (Defensive)</a>, <a href="unit-0083-raw-levy-spearmen-defensive.html">Raw Levy Spearmen (Defensive)</a>, <a href="unit-0438-seasoned-levy-spearmen-defensive.html">Seasoned Levy Spearmen (Defensive)</a>, <a href="unit-0084-heavy-militia.html">Heavy Militia</a>, <a href="unit-0085-landsknecht-pikemen.html">Landsknecht Pikemen</a>, <a href="unit-0086-galloglaich.html">Galloglaich</a>, <a href="unit-0087-scottish-spearmen.html">Scottish Spearmen</a>, <a href="unit-0088-spearmen-offensive.html">Spearmen (Offensive)</a>, <a href="unit-0089-pikemen.html">Pikemen</a>, <a href="unit-0090-pikemen-and-longbowmen.html">Pikemen and Longbowmen</a>, <a href="unit-0091-billmen-and-longbowmen.html">Billmen and Longbowmen</a>, <a href="unit-0092-pikemen-men-at-arms.html">Pikemen Men-at-Arms</a>, <a href="unit-0093-raw-levy-pikemen.html">Raw Levy Pikemen</a>, <a href="unit-0439-seasoned-levy-pikemen.html">Seasoned Levy Pikemen</a>, <a href="unit-0094-low-countries-spearmen.html">Low Countries Spearmen</a>, <a href="unit-0095-halberdiers.html">Halberdiers</a>, <a href="unit-0096-scandinavian-foot.html">Scandinavian Foot</a>, <a href="unit-0097-pavisiers-and-crossbowmen.html">Pavisiers and Crossbowmen</a> ...</div>
+        <div>Units unlocked by this structure</div><div><span class='muted'>No units directly requiring this structure</span></div>
+        <div>WallValue</div><div>0</div>
+        <div>SiegeResist</div><div>0</div>
+        <div>CounterRaid</div><div>0</div>
+        <div>FT_Level</div><div>0</div>
+        <div>FT_MinLevel</div><div>0</div>
+        <div>FT_MaxLevel</div><div>100</div>
+        <div>FT_LevelChange</div><div>0</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Manual references</h2>
+      <p class="small muted">Source: FOG_Kingdoms_Manual_Printer-Friendly.pdf</p>
+      <ul class="small">
+        <li class='muted'>No direct manual mention found for this exact structure name.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Modifiers</h2>
+      <table class="small">
+        <thead><tr><th>Name</th><th>Alias</th><th>Description</th><th>Effects (decoded)</th></tr></thead>
+        <tbody><tr><td>IDS_MOD_Name_Structure_TN_Chief_House</td><td>ID_MOD_STRUCTURE_TN_CHIEF_HOUSE</td><td>Personal Rule</td><td class='small'>Struc Output Transverse: 12 (params: $TRANSVERSE_OUTPUT_STC1, $POP_JOB_STEWARD, $POP_JOB_STEWARD, 100, 100)</td></tr><tr><td>IDS_MOD_Name_Structure_Authority2</td><td>ID_MOD_STRUCTURE_AUTHORITY2</td><td>IDS_MOD_Text_Authority2</td><td class='small'>Flavor: 0</td></tr></tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools — Resource — Structures Wiki</title>
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --border: #374151;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .muted { color: var(--muted); }
+    .kv {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px 16px;
+      margin: 8px 0;
+    }
+    .kv div:nth-child(odd) { color: var(--muted); }
+    .badge {
+      display: inline-block;
+      background: #1d4ed8;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: var(--text);
+      outline: none;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 6px;
+      vertical-align: top;
+    }
+    .small { font-size: 13px; }
+    .wiki-nav { margin-bottom: 12px; font-size: 15px; }
+    .jump-index { margin-bottom: 14px; line-height: 1.8; }
+    .jump-index a { margin-right: 10px; white-space: nowrap; }
+    section.job-group { scroll-margin-top: 16px; }
+    tr.structure-gateway {
+      background: rgba(59, 130, 246, 0.14);
+      font-weight: 600;
+    }
+    tr.structure-gateway td {
+      border-bottom-color: rgba(59, 130, 246, 0.35);
+    }
+    tr.structure-gateway td:first-child {
+      font-weight: 700;
+      border-left: 3px solid #3b82f6;
+      padding-left: 10px;
+    }
+    .badge-imped { background: #b45309; }
+    .badge-perk { background: #15803d; }
+    .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
+    code { font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    
+    <p class="wiki-nav">
+      <a href="index.html" class="muted">Buildings</a>
+      <span class="muted"> · </span>
+      <a href="impediments.html" class="muted">Impediments</a>
+      <span class="muted"> · </span>
+      <a href="perks.html" class="muted">Perks</a>
+      <span class="muted"> · </span>
+      <a href="resources.html">Resources</a>
+      <span class="muted"> · </span>
+      <a href="units.html" class="muted">Units</a>
+    </p>
+
+    <h1>Tools</h1>
+    <p class="muted"><code>ID_RES_TOOLS</code> · <a href="resources.html">All resources</a></p>
+    <div class="card">
+      <h2>Resource data</h2>
+      <p class="small muted">From RESOURCES.CSV</p>
+      <table class="small">
+        <thead><tr><th>Field</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Base value</td><td>6</td></tr>
+          <tr><td>IsNatural</td><td>No</td></tr><tr><td>IsAgricultural</td><td>No</td></tr><tr><td>IsMining</td><td>No</td></tr><tr><td>IsManufactured</td><td>Yes</td></tr><tr><td>IsLuxuries</td><td>No</td></tr><tr><td>IsStrategic</td><td>No</td></tr><tr><td>IsCoastal</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Structures using this resource</h2>
+      <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
+      <h3>Mandatory regional resource</h3><p class='muted'>None</p>
+      <h3>Input (consumed)</h3><ul class='small'><li><a href="0066-farm-workhorses.html">Farm Workhorses</a></li><li><a href="0148-craftsmen-district.html">Craftsmen District</a></li><li><a href="0149-domain-expansion-iv.html">Domain Expansion IV</a></li><li><a href="0150-domain-expansion-v.html">Domain Expansion V</a></li><li><a href="0825-artillery-adapted-castle.html">Artillery-Adapted Castle</a></li><li><a href="0826-sloped-wall-castle.html">Sloped-Wall Castle</a></li><li><a href="0501-inquisition-office.html">Inquisition Office</a></li><li><a href="0564-royal-architect.html">Royal Architect</a></li></ul>
+      <h3>Output (produced)</h3><ul class='small'><li><a href="0139-toolsmith.html">Toolsmith</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0140-master-toolsmith.html">Master Toolsmith</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0806-artisan-captives.html">Artisan Captives</a> <span class="muted small">(Output_Resource)</span></li></ul>
+      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0017-subsistence-agriculture.html">Subsistence Agriculture</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1, Bonus_Infra 1</span></li><li><a href="0038-terraced-farmfield.html">Terraced Farmfield</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2</span></li><li><a href="0056-lord-s-estate.html">Lord&#x27;s Estate</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 5</span></li><li><a href="0068-large-fruits-orchard.html">Large Fruits Orchard</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0076-tar-pit.html">Tar Pit</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2</span></li><li><a href="0080-forest-clearing.html">Forest Clearing</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3</span></li><li><a href="0670-surface-iron-mining.html">Surface Iron Mining</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Metal 1, Bonus_Manpower 1</span></li><li><a href="0872-surface-gold-mining.html">Surface Gold Mining</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Manpower 1</span></li><li><a href="0873-surface-silver-mining.html">Surface Silver Mining</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span></li><li><a href="0088-domain-expansion-i.html">Domain Expansion I</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Income 2</span></li><li><a href="0095-craftsmen-borough.html">Craftsmen Borough</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 5</span></li><li><a href="0680-surface-copper-mining.html">Surface Copper Mining</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Metal 1, Bonus_Manpower 1</span></li><li><a href="0096-domain-expansion-ii.html">Domain Expansion II</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Income 3</span></li><li><a href="0108-marble-vein.html">Marble Vein</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2</span></li><li><a href="0109-slave-workforce.html">Slave Workforce</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Infra 4</span></li><li><a href="0114-barber.html">Barber</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 2</span></li><li><a href="0115-water-carrier.html">Water carrier</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 2</span></li><li><a href="0141-domain-expansion-iii.html">Domain Expansion III</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3, Bonus_Income 4</span></li><li><a href="0148-craftsmen-district.html">Craftsmen District</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 4</span></li><li><a href="0149-domain-expansion-iv.html">Domain Expansion IV</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3, Bonus_Income 4</span></li><li><a href="0150-domain-expansion-v.html">Domain Expansion V</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3, Bonus_Income 4</span></li><li><a href="0155-silver-mine.html">Silver Mine</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0156-gold-mine.html">Gold Mine</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 5</span></li><li><a href="0677-precious-stone-mine.html">Precious stone mine</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 6</span></li><li><a href="0793-mason-s-guild.html">Mason&#x27;s Guild</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3, Bonus_Steward 3</span></li><li><a href="0794-carpenter-s-guild.html">Carpenter&#x27;s Guild</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Income 2, Bonus_Steward 3</span></li><li><a href="0801-apothecary-guild.html">Apothecary Guild</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Manpower 2</span></li><li><a href="0202-brine-well.html">Brine Well</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0698-frankincense-trader.html">Frankincense Trader</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 2</span></li><li><a href="0700-spice-trader.html">Spice Trader</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 2</span></li><li><a href="0702-salt-trader.html">Salt Trader</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 2</span></li><li><a href="0238-sculpture-workshop.html">Sculpture Workshop</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2</span></li><li><a href="0239-engraver.html">Engraver</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2</span></li><li><a href="0240-engraver-busy.html">Engraver (busy)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2</span></li><li><a href="0308-levy-weaponsmith.html">Levy Weaponsmith</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 5</span></li><li><a href="0344-armor-smith.html">Armor Smith</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4</span></li><li><a href="0345-weapons-workshop.html">Weapons Workshop</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4</span></li><li><a href="0410-ramadan-vigils.html">Ramadan Vigils</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower -1, Bonus_Piety 3</span></li><li><a href="0423-astronomer-study.html">Astronomer Study</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Piety -2, Bonus_Steward 2</span></li><li><a href="0483-mystery-plays.html">Mystery Plays</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 4</span></li><li><a href="0840-muhtasib-office.html">Muhtasib Office</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower -1, Bonus_Piety 2, Bonus_Steward 3</span></li><li><a href="0509-freemen-cottages.html">Freemen Cottages</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0511-muslim-tenants-houses.html">Muslim Tenants Houses</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span></li><li><a href="0711-public-execution.html">Public Execution</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 3</span></li><li><a href="0567-royal-executionner.html">Royal Executionner</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Piety -2, Bonus_Steward 2</span></li></ul>
+    </div>
+
+  </div>
+</body>
+</html>
