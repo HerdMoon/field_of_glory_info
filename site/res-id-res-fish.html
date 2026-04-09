@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -127,10 +163,10 @@
     <div class="card">
       <h2>Structures using this resource</h2>
       <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
-      <h3>Mandatory regional resource</h3><ul class='small'><li><a href="0176-coastal-market.html">Coastal Market</a></li></ul>
-      <h3>Input (consumed)</h3><ul class='small'><li><a href="0874-smokehouse-fish.html">Smokehouse (Fish)</a></li><li><a href="0176-coastal-market.html">Coastal Market</a></li></ul>
-      <h3>Output (produced)</h3><ul class='small'><li><a href="0043-ponds.html">Ponds</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0065-fish-farming.html">Fish Farming</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0175-fishermen-house.html">Fishermen House</a> <span class="muted small">(Output_Resource)</span></li></ul>
-      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0037-farmer-s-market.html">Farmer&#x27;s Market</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2, Bonus_Income 1</span></li><li><a href="0063-county-market.html">County Market</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Income 2</span></li><li><a href="0110-salthouse.html">Salthouse</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Income 1</span></li><li><a href="0248-inn.html">Inn</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1, Bonus_Income 4</span></li><li><a href="0252-hostelry.html">Hostelry</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2, Bonus_Income 2</span></li><li><a href="0283-peasants-roundup.html">Peasants Roundup</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1</span></li><li><a href="0299-fortified-village.html">Fortified Village</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1</span></li><li><a href="0489-religious-festivities.html">Religious Festivities</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 4, Bonus_Steward 2</span></li><li><a href="0499-mendicant-friary.html">Mendicant Friary</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 3</span></li><li><a href="0505-hamlet.html">Hamlet</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1</span></li><li><a href="0512-village.html">Village</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 1, Bonus_Manpower 1</span></li><li><a href="0553-feudal-town.html">Feudal Town</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span></li><li><a href="0554-medieval-town.html">Medieval Town</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span></li><li><a href="0560-shanty-town.html">Shanty Town</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Manpower 3</span></li><li><a href="0561-medina.html">Medina</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3, Bonus_Manpower 2</span></li><li><a href="0851-king-s-falconer-lodge.html">King&#x27;s Falconer Lodge</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 5</span></li><li><a href="0854-dar-al-saqr-falconer-s-court.html">Dar al-Saqr (Falconer&#x27;s Court)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 5</span></li></ul>
+      <h3>Mandatory regional resource</h3><ul class='small'><li><a href="0176-coastal-market.html">Coastal Market</a><br><span class="small muted">This structure outputs: —</span></li></ul>
+      <h3>Input (consumed)</h3><ul class='small'><li><a href="0874-smokehouse-fish.html">Smokehouse (Fish)</a><br><span class="small muted">This structure outputs: Preserved Food x 1</span></li><li><a href="0176-coastal-market.html">Coastal Market</a><br><span class="small muted">This structure outputs: —</span></li></ul>
+      <h3>Output (produced)</h3><ul class='small'><li><a href="0043-ponds.html">Ponds</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: —</span></li><li><a href="0065-fish-farming.html">Fish Farming</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: —</span></li><li><a href="0175-fishermen-house.html">Fishermen House</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: —</span></li></ul>
+      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0037-farmer-s-market.html">Farmer&#x27;s Market</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2, Bonus_Income 1</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0063-county-market.html">County Market</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Income 2</span><br><span class="small muted">This structure inputs: input: Grain · outputs: Preserved Food x 1</span></li><li><a href="0110-salthouse.html">Salthouse</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Income 1</span><br><span class="small muted">This structure inputs: input: Salt · outputs: Preserved Food x 1</span></li><li><a href="0248-inn.html">Inn</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1, Bonus_Income 4</span><br><span class="small muted">This structure inputs: input: Wine · outputs: —</span></li><li><a href="0252-hostelry.html">Hostelry</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2, Bonus_Income 2</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0283-peasants-roundup.html">Peasants Roundup</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0299-fortified-village.html">Fortified Village</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0489-religious-festivities.html">Religious Festivities</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 4, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: mandatory: Religious Craftsmanship · outputs: —</span></li><li><a href="0499-mendicant-friary.html">Mendicant Friary</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 3</span><br><span class="small muted">This structure inputs: input: Legumes · outputs: —</span></li><li><a href="0505-hamlet.html">Hamlet</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Legumes · outputs: —</span></li><li><a href="0512-village.html">Village</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 1, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Cloth · outputs: —</span></li><li><a href="0553-feudal-town.html">Feudal Town</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Cloth · outputs: —</span></li><li><a href="0554-medieval-town.html">Medieval Town</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Tiles &amp; Brick · outputs: —</span></li><li><a href="0560-shanty-town.html">Shanty Town</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Manpower 3</span><br><span class="small muted">This structure inputs: input: Legumes · outputs: —</span></li><li><a href="0561-medina.html">Medina</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3, Bonus_Manpower 2</span><br><span class="small muted">This structure inputs: input: Pottery · outputs: —</span></li><li><a href="0851-king-s-falconer-lodge.html">King&#x27;s Falconer Lodge</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0854-dar-al-saqr-falconer-s-court.html">Dar al-Saqr (Falconer&#x27;s Court)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li></ul>
     </div>
 
   </div>

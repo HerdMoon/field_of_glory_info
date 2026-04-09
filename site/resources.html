@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -120,472 +156,406 @@
     </div>
     <section class="job-group card" data-group="RES">
       <h2>Resource list <span class="small muted">(66)</span></h2>
-      <p class="small muted">Flag columns: Nat Agri Mine Mfg Lux Strat Coast (letter if yes, · if no)</p>
+      <p class="small muted">Sorted by flag pattern (more flags first), then base value (higher first). Nat Agri Mine Mfg Lux Strat Coast (letter if yes, · if no)</p>
       <table class="small">
         <thead>
-          <tr><th>Resource</th><th>Alias</th><th>Base value</th><th>Flags</th></tr>
+          <tr><th>Resource</th><th>Base value</th><th>Flags</th></tr>
         </thead>
         <tbody>
         <tr class="structure-card" data-search="Amber ID_RES_AMBER" data-group="RES">
           <td><a href="res-id-res-amber.html">Amber</a></td>
-          <td><code class="small">ID_RES_AMBER</code></td>
           <td>5</td>
           <td class="small mono">Nat · · · · · Coast</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Armors ID_RES_ARMORS" data-group="RES">
-          <td><a href="res-id-res-armors.html">Armors</a></td>
-          <td><code class="small">ID_RES_ARMORS</code></td>
-          <td>6</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Brass ID_RES_BRASS" data-group="RES">
-          <td><a href="res-id-res-brass.html">Brass</a></td>
-          <td><code class="small">ID_RES_BRASS</code></td>
-          <td>5</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Ceramics ID_RES_CERAMICS" data-group="RES">
-          <td><a href="res-id-res-ceramics.html">Ceramics</a></td>
-          <td><code class="small">ID_RES_CERAMICS</code></td>
-          <td>6</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Cloth ID_RES_CLOTH" data-group="RES">
-          <td><a href="res-id-res-cloth.html">Cloth</a></td>
-          <td><code class="small">ID_RES_CLOTH</code></td>
-          <td>4</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Coal ID_RES_COAL" data-group="RES">
-          <td><a href="res-id-res-coal.html">Coal</a></td>
-          <td><code class="small">ID_RES_COAL</code></td>
-          <td>3</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Copper ID_RES_COPPER" data-group="RES">
-          <td><a href="res-id-res-copper.html">Copper</a></td>
-          <td><code class="small">ID_RES_COPPER</code></td>
-          <td>6</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Copper Vein ID_RES_COPPER_VEIN" data-group="RES">
-          <td><a href="res-id-res-copper-vein.html">Copper Vein</a></td>
-          <td><code class="small">ID_RES_COPPER_VEIN</code></td>
-          <td>5</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Cotton ID_RES_COTTON" data-group="RES">
-          <td><a href="res-id-res-cotton.html">Cotton</a></td>
-          <td><code class="small">ID_RES_COTTON</code></td>
-          <td>5</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Dyes ID_RES_DYES" data-group="RES">
-          <td><a href="res-id-res-dyes.html">Dyes</a></td>
-          <td><code class="small">ID_RES_DYES</code></td>
-          <td>4</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Exotic Fruits ID_RES_EXOTICFRUITS" data-group="RES">
-          <td><a href="res-id-res-exoticfruits.html">Exotic Fruits</a></td>
-          <td><code class="small">ID_RES_EXOTICFRUITS</code></td>
-          <td>3</td>
-          <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Fishes ID_RES_FISH" data-group="RES">
           <td><a href="res-id-res-fish.html">Fishes</a></td>
-          <td><code class="small">ID_RES_FISH</code></td>
           <td>3</td>
           <td class="small mono">Nat · · · · · Coast</td>
         </tr>
 
-        <tr class="structure-card" data-search="Flax ID_RES_FLAX" data-group="RES">
-          <td><a href="res-id-res-flax.html">Flax</a></td>
-          <td><code class="small">ID_RES_FLAX</code></td>
-          <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Frankincense ID_RES_FRANKINCENSE" data-group="RES">
-          <td><a href="res-id-res-frankincense.html">Frankincense</a></td>
-          <td><code class="small">ID_RES_FRANKINCENSE</code></td>
-          <td>6</td>
-          <td class="small mono">Nat · · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Fruits ID_RES_FRUITS" data-group="RES">
-          <td><a href="res-id-res-fruits.html">Fruits</a></td>
-          <td><code class="small">ID_RES_FRUITS</code></td>
-          <td>3</td>
-          <td class="small mono">Nat · · · · · ·</td>
+        <tr class="structure-card" data-search="Luxury ID_RES_LUXURY" data-group="RES">
+          <td><a href="res-id-res-luxury.html">Luxury</a></td>
+          <td>8</td>
+          <td class="small mono">· · · Mfg Lux · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Furnitures ID_RES_FURNITURES" data-group="RES">
           <td><a href="res-id-res-furnitures.html">Furnitures</a></td>
-          <td><code class="small">ID_RES_FURNITURES</code></td>
           <td>7</td>
           <td class="small mono">· · · Mfg Lux · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Furs &amp; Pelts ID_RES_FURSPELTS" data-group="RES">
-          <td><a href="res-id-res-furspelts.html">Furs &amp; Pelts</a></td>
-          <td><code class="small">ID_RES_FURSPELTS</code></td>
-          <td>4</td>
+        <tr class="structure-card" data-search="Religious Craftsmanship ID_RES_RELIGIOUSWORK" data-group="RES">
+          <td><a href="res-id-res-religiouswork.html">Religious Craftsmanship</a></td>
+          <td>7</td>
+          <td class="small mono">· · · Mfg Lux · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Frankincense ID_RES_FRANKINCENSE" data-group="RES">
+          <td><a href="res-id-res-frankincense.html">Frankincense</a></td>
+          <td>6</td>
           <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Glassware ID_RES_GLASSWARE" data-group="RES">
-          <td><a href="res-id-res-glassware.html">Glassware</a></td>
-          <td><code class="small">ID_RES_GLASSWARE</code></td>
+        <tr class="structure-card" data-search="Ivory &amp; Tusks ID_RES_IVORY" data-group="RES">
+          <td><a href="res-id-res-ivory.html">Ivory &amp; Tusks</a></td>
+          <td>6</td>
+          <td class="small mono">Nat · · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Wild Beasts ID_RES_WILDBEASTS" data-group="RES">
+          <td><a href="res-id-res-wildbeasts.html">Wild Beasts</a></td>
           <td>5</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+          <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Gold ID_RES_GOLD" data-group="RES">
-          <td><a href="res-id-res-gold.html">Gold</a></td>
-          <td><code class="small">ID_RES_GOLD</code></td>
-          <td>8</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Gold Vein ID_RES_GOLD_VEIN" data-group="RES">
-          <td><a href="res-id-res-gold-vein.html">Gold Vein</a></td>
-          <td><code class="small">ID_RES_GOLD_VEIN</code></td>
-          <td>8</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Grain ID_RES_GRAIN" data-group="RES">
-          <td><a href="res-id-res-grain.html">Grain</a></td>
-          <td><code class="small">ID_RES_GRAIN</code></td>
-          <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Hemp ID_RES_HEMP" data-group="RES">
-          <td><a href="res-id-res-hemp.html">Hemp</a></td>
-          <td><code class="small">ID_RES_HEMP</code></td>
-          <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Drugs &amp; Herbs ID_RES_HERBSDRUGS" data-group="RES">
-          <td><a href="res-id-res-herbsdrugs.html">Drugs &amp; Herbs</a></td>
-          <td><code class="small">ID_RES_HERBSDRUGS</code></td>
-          <td>3</td>
+        <tr class="structure-card" data-search="Furs &amp; Pelts ID_RES_FURSPELTS" data-group="RES">
+          <td><a href="res-id-res-furspelts.html">Furs &amp; Pelts</a></td>
+          <td>4</td>
           <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Honey &amp; Wax ID_RES_HONEYWAX" data-group="RES">
           <td><a href="res-id-res-honeywax.html">Honey &amp; Wax</a></td>
-          <td><code class="small">ID_RES_HONEYWAX</code></td>
           <td>4</td>
           <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Horses ID_RES_HORSES" data-group="RES">
-          <td><a href="res-id-res-horses.html">Horses</a></td>
-          <td><code class="small">ID_RES_HORSES</code></td>
+        <tr class="structure-card" data-search="Salt ID_RES_SALT" data-group="RES">
+          <td><a href="res-id-res-salt.html">Salt</a></td>
           <td>4</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Indigo ID_RES_INDIGO" data-group="RES">
-          <td><a href="res-id-res-indigo.html">Indigo</a></td>
-          <td><code class="small">ID_RES_INDIGO</code></td>
-          <td>6</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Iron Ore ID_RES_IRON" data-group="RES">
-          <td><a href="res-id-res-iron.html">Iron Ore</a></td>
-          <td><code class="small">ID_RES_IRON</code></td>
-          <td>5</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Iron Vein ID_RES_IRON_VEIN" data-group="RES">
-          <td><a href="res-id-res-iron-vein.html">Iron Vein</a></td>
-          <td><code class="small">ID_RES_IRON_VEIN</code></td>
-          <td>5</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Ivory &amp; Tusks ID_RES_IVORY" data-group="RES">
-          <td><a href="res-id-res-ivory.html">Ivory &amp; Tusks</a></td>
-          <td><code class="small">ID_RES_IVORY</code></td>
-          <td>6</td>
           <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Lead ID_RES_LEAD" data-group="RES">
-          <td><a href="res-id-res-lead.html">Lead</a></td>
-          <td><code class="small">ID_RES_LEAD</code></td>
-          <td>4</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Lead Vein ID_RES_LEAD_VEIN" data-group="RES">
-          <td><a href="res-id-res-lead-vein.html">Lead Vein</a></td>
-          <td><code class="small">ID_RES_LEAD_VEIN</code></td>
-          <td>4</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Leather ID_RES_LEATHER" data-group="RES">
-          <td><a href="res-id-res-leather.html">Leather</a></td>
-          <td><code class="small">ID_RES_LEATHER</code></td>
+        <tr class="structure-card" data-search="Drugs &amp; Herbs ID_RES_HERBSDRUGS" data-group="RES">
+          <td><a href="res-id-res-herbsdrugs.html">Drugs &amp; Herbs</a></td>
           <td>3</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+          <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Legumes ID_RES_LEGUMES" data-group="RES">
-          <td><a href="res-id-res-legumes.html">Legumes</a></td>
-          <td><code class="small">ID_RES_LEGUMES</code></td>
+        <tr class="structure-card" data-search="Exotic Fruits ID_RES_EXOTICFRUITS" data-group="RES">
+          <td><a href="res-id-res-exoticfruits.html">Exotic Fruits</a></td>
           <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
+          <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Livestock ID_RES_LIVESTOCK" data-group="RES">
-          <td><a href="res-id-res-livestock.html">Livestock</a></td>
-          <td><code class="small">ID_RES_LIVESTOCK</code></td>
+        <tr class="structure-card" data-search="Fruits ID_RES_FRUITS" data-group="RES">
+          <td><a href="res-id-res-fruits.html">Fruits</a></td>
           <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Luxury ID_RES_LUXURY" data-group="RES">
-          <td><a href="res-id-res-luxury.html">Luxury</a></td>
-          <td><code class="small">ID_RES_LUXURY</code></td>
-          <td>8</td>
-          <td class="small mono">· · · Mfg Lux · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Marble ID_RES_MARBLE" data-group="RES">
-          <td><a href="res-id-res-marble.html">Marble</a></td>
-          <td><code class="small">ID_RES_MARBLE</code></td>
-          <td>5</td>
-          <td class="small mono">· · Mine · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Marble Vein ID_RES_MARBLE_VEIN" data-group="RES">
-          <td><a href="res-id-res-marble-vein.html">Marble Vein</a></td>
-          <td><code class="small">ID_RES_MARBLE_VEIN</code></td>
-          <td>5</td>
-          <td class="small mono">· · Mine · · · ·</td>
+          <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Naphta ID_RES_NAPHTA" data-group="RES">
           <td><a href="res-id-res-naphta.html">Naphta</a></td>
-          <td><code class="small">ID_RES_NAPHTA</code></td>
           <td>3</td>
           <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Nuts &amp; Seeds ID_RES_NUTSSEEDS" data-group="RES">
           <td><a href="res-id-res-nutsseeds.html">Nuts &amp; Seeds</a></td>
-          <td><code class="small">ID_RES_NUTSSEEDS</code></td>
           <td>3</td>
           <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Parchment &amp; Vellum ID_RES_PARCHMENT" data-group="RES">
-          <td><a href="res-id-res-parchment.html">Parchment &amp; Vellum</a></td>
-          <td><code class="small">ID_RES_PARCHMENT</code></td>
-          <td>5</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+        <tr class="structure-card" data-search="Wood ID_RES_WOOD" data-group="RES">
+          <td><a href="res-id-res-wood.html">Wood</a></td>
+          <td>3</td>
+          <td class="small mono">Nat · · · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Pottery ID_RES_POTTERY" data-group="RES">
-          <td><a href="res-id-res-pottery.html">Pottery</a></td>
-          <td><code class="small">ID_RES_POTTERY</code></td>
+        <tr class="structure-card" data-search="Indigo ID_RES_INDIGO" data-group="RES">
+          <td><a href="res-id-res-indigo.html">Indigo</a></td>
+          <td>6</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Silk ID_RES_SILK" data-group="RES">
+          <td><a href="res-id-res-silk.html">Silk</a></td>
+          <td>6</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Spices ID_RES_SPICES" data-group="RES">
+          <td><a href="res-id-res-spices.html">Spices</a></td>
+          <td>6</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Cotton ID_RES_COTTON" data-group="RES">
+          <td><a href="res-id-res-cotton.html">Cotton</a></td>
+          <td>5</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Horses ID_RES_HORSES" data-group="RES">
+          <td><a href="res-id-res-horses.html">Horses</a></td>
           <td>4</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Flax ID_RES_FLAX" data-group="RES">
+          <td><a href="res-id-res-flax.html">Flax</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Grain ID_RES_GRAIN" data-group="RES">
+          <td><a href="res-id-res-grain.html">Grain</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Hemp ID_RES_HEMP" data-group="RES">
+          <td><a href="res-id-res-hemp.html">Hemp</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Legumes ID_RES_LEGUMES" data-group="RES">
+          <td><a href="res-id-res-legumes.html">Legumes</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Livestock ID_RES_LIVESTOCK" data-group="RES">
+          <td><a href="res-id-res-livestock.html">Livestock</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Preserved Food ID_RES_PRESERVEDFOOD" data-group="RES">
+          <td><a href="res-id-res-preservedfood.html">Preserved Food</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Wine ID_RES_WINE" data-group="RES">
+          <td><a href="res-id-res-wine.html">Wine</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Wool ID_RES_WOOL" data-group="RES">
+          <td><a href="res-id-res-wool.html">Wool</a></td>
+          <td>3</td>
+          <td class="small mono">· Agri · · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Gold ID_RES_GOLD" data-group="RES">
+          <td><a href="res-id-res-gold.html">Gold</a></td>
+          <td>8</td>
+          <td class="small mono">· · Mine · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Gold Vein ID_RES_GOLD_VEIN" data-group="RES">
+          <td><a href="res-id-res-gold-vein.html">Gold Vein</a></td>
+          <td>8</td>
+          <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Precious Stones ID_RES_PRECIOUSSTONES" data-group="RES">
           <td><a href="res-id-res-preciousstones.html">Precious Stones</a></td>
-          <td><code class="small">ID_RES_PRECIOUSSTONES</code></td>
           <td>8</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Precious Stones Vein ID_RES_PRECIOUSSTONES_VEIN" data-group="RES">
           <td><a href="res-id-res-preciousstones-vein.html">Precious Stones Vein</a></td>
-          <td><code class="small">ID_RES_PRECIOUSSTONES_VEIN</code></td>
           <td>8</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Preserved Food ID_RES_PRESERVEDFOOD" data-group="RES">
-          <td><a href="res-id-res-preservedfood.html">Preserved Food</a></td>
-          <td><code class="small">ID_RES_PRESERVEDFOOD</code></td>
-          <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Religious Craftsmanship ID_RES_RELIGIOUSWORK" data-group="RES">
-          <td><a href="res-id-res-religiouswork.html">Religious Craftsmanship</a></td>
-          <td><code class="small">ID_RES_RELIGIOUSWORK</code></td>
-          <td>7</td>
-          <td class="small mono">· · · Mfg Lux · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Sails ID_RES_SAILS" data-group="RES">
-          <td><a href="res-id-res-sails.html">Sails</a></td>
-          <td><code class="small">ID_RES_SAILS</code></td>
-          <td>5</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Salt ID_RES_SALT" data-group="RES">
-          <td><a href="res-id-res-salt.html">Salt</a></td>
-          <td><code class="small">ID_RES_SALT</code></td>
-          <td>4</td>
-          <td class="small mono">Nat · · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Silk ID_RES_SILK" data-group="RES">
-          <td><a href="res-id-res-silk.html">Silk</a></td>
-          <td><code class="small">ID_RES_SILK</code></td>
-          <td>6</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
         <tr class="structure-card" data-search="Silver ID_RES_SILVER" data-group="RES">
           <td><a href="res-id-res-silver.html">Silver</a></td>
-          <td><code class="small">ID_RES_SILVER</code></td>
           <td>7</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Silver Vein ID_RES_SILVER_VEIN" data-group="RES">
           <td><a href="res-id-res-silver-vein.html">Silver Vein</a></td>
-          <td><code class="small">ID_RES_SILVER_VEIN</code></td>
           <td>7</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Spices ID_RES_SPICES" data-group="RES">
-          <td><a href="res-id-res-spices.html">Spices</a></td>
-          <td><code class="small">ID_RES_SPICES</code></td>
+        <tr class="structure-card" data-search="Copper ID_RES_COPPER" data-group="RES">
+          <td><a href="res-id-res-copper.html">Copper</a></td>
           <td>6</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Stone ID_RES_STONE" data-group="RES">
-          <td><a href="res-id-res-stone.html">Stone</a></td>
-          <td><code class="small">ID_RES_STONE</code></td>
-          <td>3</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Sulfur ID_RES_SULFUR" data-group="RES">
-          <td><a href="res-id-res-sulfur.html">Sulfur</a></td>
-          <td><code class="small">ID_RES_SULFUR</code></td>
-          <td>4</td>
+        <tr class="structure-card" data-search="Copper Vein ID_RES_COPPER_VEIN" data-group="RES">
+          <td><a href="res-id-res-copper-vein.html">Copper Vein</a></td>
+          <td>5</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Tar ID_RES_TAR" data-group="RES">
-          <td><a href="res-id-res-tar.html">Tar</a></td>
-          <td><code class="small">ID_RES_TAR</code></td>
-          <td>4</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+        <tr class="structure-card" data-search="Iron Ore ID_RES_IRON" data-group="RES">
+          <td><a href="res-id-res-iron.html">Iron Ore</a></td>
+          <td>5</td>
+          <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Tiles &amp; Brick ID_RES_TILESBRICK" data-group="RES">
-          <td><a href="res-id-res-tilesbrick.html">Tiles &amp; Brick</a></td>
-          <td><code class="small">ID_RES_TILESBRICK</code></td>
-          <td>4</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+        <tr class="structure-card" data-search="Iron Vein ID_RES_IRON_VEIN" data-group="RES">
+          <td><a href="res-id-res-iron-vein.html">Iron Vein</a></td>
+          <td>5</td>
+          <td class="small mono">· · Mine · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Marble ID_RES_MARBLE" data-group="RES">
+          <td><a href="res-id-res-marble.html">Marble</a></td>
+          <td>5</td>
+          <td class="small mono">· · Mine · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Marble Vein ID_RES_MARBLE_VEIN" data-group="RES">
+          <td><a href="res-id-res-marble-vein.html">Marble Vein</a></td>
+          <td>5</td>
+          <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Tin ID_RES_TIN" data-group="RES">
           <td><a href="res-id-res-tin.html">Tin</a></td>
-          <td><code class="small">ID_RES_TIN</code></td>
           <td>5</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Tin Vein ID_RES_TIN_VEIN" data-group="RES">
           <td><a href="res-id-res-tin-vein.html">Tin Vein</a></td>
-          <td><code class="small">ID_RES_TIN_VEIN</code></td>
           <td>5</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Tools ID_RES_TOOLS" data-group="RES">
-          <td><a href="res-id-res-tools.html">Tools</a></td>
-          <td><code class="small">ID_RES_TOOLS</code></td>
-          <td>6</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+        <tr class="structure-card" data-search="Lead ID_RES_LEAD" data-group="RES">
+          <td><a href="res-id-res-lead.html">Lead</a></td>
+          <td>4</td>
+          <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Transport Ships ID_RES_TRSSHIPS" data-group="RES">
-          <td><a href="res-id-res-trsships.html">Transport Ships</a></td>
-          <td><code class="small">ID_RES_TRSSHIPS</code></td>
-          <td>7</td>
-          <td class="small mono">· · · Mfg · · ·</td>
+        <tr class="structure-card" data-search="Lead Vein ID_RES_LEAD_VEIN" data-group="RES">
+          <td><a href="res-id-res-lead-vein.html">Lead Vein</a></td>
+          <td>4</td>
+          <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
-        <tr class="structure-card" data-search="Weapons ID_RES_WEAPONS" data-group="RES">
-          <td><a href="res-id-res-weapons.html">Weapons</a></td>
-          <td><code class="small">ID_RES_WEAPONS</code></td>
-          <td>6</td>
-          <td class="small mono">· · · Mfg · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Wild Beasts ID_RES_WILDBEASTS" data-group="RES">
-          <td><a href="res-id-res-wildbeasts.html">Wild Beasts</a></td>
-          <td><code class="small">ID_RES_WILDBEASTS</code></td>
-          <td>5</td>
-          <td class="small mono">Nat · · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Wine ID_RES_WINE" data-group="RES">
-          <td><a href="res-id-res-wine.html">Wine</a></td>
-          <td><code class="small">ID_RES_WINE</code></td>
-          <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Wood ID_RES_WOOD" data-group="RES">
-          <td><a href="res-id-res-wood.html">Wood</a></td>
-          <td><code class="small">ID_RES_WOOD</code></td>
-          <td>3</td>
-          <td class="small mono">Nat · · · · · ·</td>
-        </tr>
-
-        <tr class="structure-card" data-search="Wool ID_RES_WOOL" data-group="RES">
-          <td><a href="res-id-res-wool.html">Wool</a></td>
-          <td><code class="small">ID_RES_WOOL</code></td>
-          <td>3</td>
-          <td class="small mono">· Agri · · · · ·</td>
+        <tr class="structure-card" data-search="Sulfur ID_RES_SULFUR" data-group="RES">
+          <td><a href="res-id-res-sulfur.html">Sulfur</a></td>
+          <td>4</td>
+          <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Zinc ID_RES_ZINC" data-group="RES">
           <td><a href="res-id-res-zinc.html">Zinc</a></td>
-          <td><code class="small">ID_RES_ZINC</code></td>
           <td>4</td>
           <td class="small mono">· · Mine · · · ·</td>
         </tr>
 
         <tr class="structure-card" data-search="Zinc Vein ID_RES_ZINC_VEIN" data-group="RES">
           <td><a href="res-id-res-zinc-vein.html">Zinc Vein</a></td>
-          <td><code class="small">ID_RES_ZINC_VEIN</code></td>
           <td>4</td>
           <td class="small mono">· · Mine · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Coal ID_RES_COAL" data-group="RES">
+          <td><a href="res-id-res-coal.html">Coal</a></td>
+          <td>3</td>
+          <td class="small mono">· · Mine · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Stone ID_RES_STONE" data-group="RES">
+          <td><a href="res-id-res-stone.html">Stone</a></td>
+          <td>3</td>
+          <td class="small mono">· · Mine · · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Transport Ships ID_RES_TRSSHIPS" data-group="RES">
+          <td><a href="res-id-res-trsships.html">Transport Ships</a></td>
+          <td>7</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Armors ID_RES_ARMORS" data-group="RES">
+          <td><a href="res-id-res-armors.html">Armors</a></td>
+          <td>6</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Ceramics ID_RES_CERAMICS" data-group="RES">
+          <td><a href="res-id-res-ceramics.html">Ceramics</a></td>
+          <td>6</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Tools ID_RES_TOOLS" data-group="RES">
+          <td><a href="res-id-res-tools.html">Tools</a></td>
+          <td>6</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Weapons ID_RES_WEAPONS" data-group="RES">
+          <td><a href="res-id-res-weapons.html">Weapons</a></td>
+          <td>6</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Brass ID_RES_BRASS" data-group="RES">
+          <td><a href="res-id-res-brass.html">Brass</a></td>
+          <td>5</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Glassware ID_RES_GLASSWARE" data-group="RES">
+          <td><a href="res-id-res-glassware.html">Glassware</a></td>
+          <td>5</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Parchment &amp; Vellum ID_RES_PARCHMENT" data-group="RES">
+          <td><a href="res-id-res-parchment.html">Parchment &amp; Vellum</a></td>
+          <td>5</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Sails ID_RES_SAILS" data-group="RES">
+          <td><a href="res-id-res-sails.html">Sails</a></td>
+          <td>5</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Cloth ID_RES_CLOTH" data-group="RES">
+          <td><a href="res-id-res-cloth.html">Cloth</a></td>
+          <td>4</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Dyes ID_RES_DYES" data-group="RES">
+          <td><a href="res-id-res-dyes.html">Dyes</a></td>
+          <td>4</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Pottery ID_RES_POTTERY" data-group="RES">
+          <td><a href="res-id-res-pottery.html">Pottery</a></td>
+          <td>4</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Tar ID_RES_TAR" data-group="RES">
+          <td><a href="res-id-res-tar.html">Tar</a></td>
+          <td>4</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Tiles &amp; Brick ID_RES_TILESBRICK" data-group="RES">
+          <td><a href="res-id-res-tilesbrick.html">Tiles &amp; Brick</a></td>
+          <td>4</td>
+          <td class="small mono">· · · Mfg · · ·</td>
+        </tr>
+
+        <tr class="structure-card" data-search="Leather ID_RES_LEATHER" data-group="RES">
+          <td><a href="res-id-res-leather.html">Leather</a></td>
+          <td>3</td>
+          <td class="small mono">· · · Mfg · · ·</td>
         </tr>
 </tbody>
       </table>

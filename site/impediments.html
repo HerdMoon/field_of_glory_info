@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -135,7 +171,7 @@
 
 The common Poacher will hunt local game without regard for the forestry laws or the general population. In addition to the use of the appropriate Regional Decision, they can be countered with the presence of the Sworn Forester (or a Sheriff, if you are in England), a tier I Stewardship building.
 
-EVENT: Rarely, they can turn out to be benevolent, helping feed the local populace. 41 ID_STRUC_EVT_POACHER $ID_STRUC_EVT_POACHER 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+EVENT: Rarely, they can turn out to be benevolent, helping feed the local populace. 41 ID_STRUC_EVT_POACHER $ID_STRUC_EVT_POACHER 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Income_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0041-poacher.html">Poacher</a></td>
           <td>41</td>
           <td>1</td>
@@ -151,7 +187,7 @@ EVENT: Rarely, they can turn out to be benevolent, helping feed the local popula
 
         <tr class="structure-card" data-search="Noble Poacher Event Building.
 
-This altruistic Poacher and his vivacious companions have pledged to help the local poor in their daily struggle for sustenance. They will share what they manage to catch in the forest, be it a deer or wealthy travellers&#x27; purses … although Sworn Foresters will also look to catch them in return. 42 ID_STRUC_EVT_NOBLE_POACHER $ID_STRUC_EVT_NOBLE_POACHER 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+This altruistic Poacher and his vivacious companions have pledged to help the local poor in their daily struggle for sustenance. They will share what they manage to catch in the forest, be it a deer or wealthy travellers&#x27; purses … although Sworn Foresters will also look to catch them in return. 42 ID_STRUC_EVT_NOBLE_POACHER $ID_STRUC_EVT_NOBLE_POACHER 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Income_Output  0 0 0 Loyalty Bonus: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0042-noble-poacher.html">Noble Poacher</a></td>
           <td>42</td>
           <td>1</td>
@@ -165,7 +201,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Poor Soil The soil here is poor and harvests are much lower than expected. There is not much we can do about that. 591 ID_STRUC_IMP_POOR_SOIL $ID_STRUC_IMP_POOR_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Poor Soil The soil here is poor and harvests are much lower than expected. There is not much we can do about that. 591 ID_STRUC_IMP_POOR_SOIL $ID_STRUC_IMP_POOR_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0591-poor-soil.html">Poor Soil</a></td>
           <td>591</td>
           <td>1</td>
@@ -179,7 +215,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Tenacious Grassland Resilient and hard-to-uproot weeds are everywhere and this makes planting the crops much harder than usual. Terracing might help solve the issues. 592 ID_STRUC_IMP_TENACIOUS_GRASSLAND $ID_STRUC_IMP_TENACIOUS_GRASSLAND 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Tenacious Grassland Resilient and hard-to-uproot weeds are everywhere and this makes planting the crops much harder than usual. Terracing might help solve the issues. 592 ID_STRUC_IMP_TENACIOUS_GRASSLAND $ID_STRUC_IMP_TENACIOUS_GRASSLAND 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0592-tenacious-grassland.html">Tenacious Grassland</a></td>
           <td>592</td>
           <td>1</td>
@@ -193,7 +229,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Sterile Moor The moor here has its charm, but it makes for poor yields when it comes to cultivating the land. There is not much we can do about that. 596 ID_STRUC_IMP_STERILE_MOOR $ID_STRUC_IMP_STERILE_MOOR 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Sterile Moor The moor here has its charm, but it makes for poor yields when it comes to cultivating the land. There is not much we can do about that. 596 ID_STRUC_IMP_STERILE_MOOR $ID_STRUC_IMP_STERILE_MOOR 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0596-sterile-moor.html">Sterile Moor</a></td>
           <td>596</td>
           <td>1</td>
@@ -207,7 +243,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Fearsome Beasts The region is famed for its wild animals, unfortunate they eat both farm animals and people. 602 ID_STRUC_IMP_FEARSOME_BEASTS $ID_STRUC_IMP_FEARSOME_BEASTS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Fearsome Beasts The region is famed for its wild animals, unfortunate they eat both farm animals and people. 602 ID_STRUC_IMP_FEARSOME_BEASTS $ID_STRUC_IMP_FEARSOME_BEASTS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Manpower_Output  0 0 0 Leader Quality Penalty: 1 Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0602-fearsome-beasts.html">Fearsome Beasts</a></td>
           <td>602</td>
           <td>1</td>
@@ -221,7 +257,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Wolves Wolves roam across this region threatening farmers and their stock. 612 ID_STRUC_IMP_WOLVES $ID_STRUC_IMP_WOLVES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Wolves Wolves roam across this region threatening farmers and their stock. 612 ID_STRUC_IMP_WOLVES $ID_STRUC_IMP_WOLVES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output Manpower_Output  0 0 0 Food Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0612-wolves.html">Wolves</a></td>
           <td>612</td>
           <td>1</td>
@@ -235,7 +271,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Dense Scrub The land is broken up by dense undergrowth and to work this region would require a great deal of effort. 617 ID_STRUC_IMP_DENSE_SCRUB $ID_STRUC_IMP_DENSE_SCRUB 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Dense Scrub The land is broken up by dense undergrowth and to work this region would require a great deal of effort. 617 ID_STRUC_IMP_DENSE_SCRUB $ID_STRUC_IMP_DENSE_SCRUB 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0617-dense-scrub.html">Dense Scrub</a></td>
           <td>617</td>
           <td>1</td>
@@ -249,7 +285,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Badlands The local soils are thin and poor, making this region difficult to cultivate. 618 ID_STRUC_IMP_BADLANDS $ID_STRUC_IMP_BADLANDS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Badlands The local soils are thin and poor, making this region difficult to cultivate. 618 ID_STRUC_IMP_BADLANDS $ID_STRUC_IMP_BADLANDS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0618-badlands.html">Badlands</a></td>
           <td>618</td>
           <td>1</td>
@@ -263,7 +299,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Ravenous Lions Lions roam across this region threatening farmers and their stock. 623 ID_STRUC_IMP_RAVENOUS_LIONS $ID_STRUC_IMP_RAVENOUS_LIONS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Ravenous Lions Lions roam across this region threatening farmers and their stock. 623 ID_STRUC_IMP_RAVENOUS_LIONS $ID_STRUC_IMP_RAVENOUS_LIONS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Manpower_Output  0 0 0 Mbp Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0623-ravenous-lions.html">Ravenous Lions</a></td>
           <td>623</td>
           <td>1</td>
@@ -277,7 +313,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Sterile Basin Salt pans litter the region and wind blows the salt over the fields destroying crops. 626 ID_STRUC_IMP_STERILE_BASIN $ID_STRUC_IMP_STERILE_BASIN 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Sterile Basin Salt pans litter the region and wind blows the salt over the fields destroying crops. 626 ID_STRUC_IMP_STERILE_BASIN $ID_STRUC_IMP_STERILE_BASIN 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Health Penalty: 3%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0626-sterile-basin.html">Sterile Basin</a></td>
           <td>626</td>
           <td>1</td>
@@ -291,7 +327,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Eroded Soil Once this may have been a rich region, but the top soils have long been blown away leaving poor farmland and grazing. 627 ID_STRUC_IMP_ERODED_SOIL $ID_STRUC_IMP_ERODED_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Eroded Soil Once this may have been a rich region, but the top soils have long been blown away leaving poor farmland and grazing. 627 ID_STRUC_IMP_ERODED_SOIL $ID_STRUC_IMP_ERODED_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0627-eroded-soil.html">Eroded Soil</a></td>
           <td>627</td>
           <td>1</td>
@@ -305,7 +341,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Snow Leopards Snow Leopards roam across this region threatening farmers and their stock. 633 ID_STRUC_IMP_SNOW_LEOPARDS $ID_STRUC_IMP_SNOW_LEOPARDS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Snow Leopards Snow Leopards roam across this region threatening farmers and their stock. 633 ID_STRUC_IMP_SNOW_LEOPARDS $ID_STRUC_IMP_SNOW_LEOPARDS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Manpower_Output  0 0 0 Gs Revolt Increase: 1% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0633-snow-leopards.html">Snow Leopards</a></td>
           <td>633</td>
           <td>1</td>
@@ -319,7 +355,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Bleak Terrain The local grasslands mask poor soils and are affected by hot summers and cold winters. 656 ID_STRUC_IMP_BLEAK_TERRAIN $ID_STRUC_IMP_BLEAK_TERRAIN 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Bleak Terrain The local grasslands mask poor soils and are affected by hot summers and cold winters. 656 ID_STRUC_IMP_BLEAK_TERRAIN $ID_STRUC_IMP_BLEAK_TERRAIN 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0656-bleak-terrain.html">Bleak Terrain</a></td>
           <td>656</td>
           <td>1</td>
@@ -333,7 +369,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Prairie Wildfires Frequent thunderstorms mean that the local grasslands are often set alight. 658 ID_STRUC_IMP_PRAIRIE_WILDFIRES $ID_STRUC_IMP_PRAIRIE_WILDFIRES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Prairie Wildfires Frequent thunderstorms mean that the local grasslands are often set alight. 658 ID_STRUC_IMP_PRAIRIE_WILDFIRES $ID_STRUC_IMP_PRAIRIE_WILDFIRES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Food Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0658-prairie-wildfires.html">Prairie Wildfires</a></td>
           <td>658</td>
           <td>1</td>
@@ -347,7 +383,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Windblown Soil The harsh winds blow any exposed soil away making agriculture almost impossible. 659 ID_STRUC_IMP_WINDBLOWN_SOIL $ID_STRUC_IMP_WINDBLOWN_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Windblown Soil The harsh winds blow any exposed soil away making agriculture almost impossible. 659 ID_STRUC_IMP_WINDBLOWN_SOIL $ID_STRUC_IMP_WINDBLOWN_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0659-windblown-soil.html">Windblown Soil</a></td>
           <td>659</td>
           <td>1</td>
@@ -361,7 +397,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="No oases If the trackless sands were not a sufficient barrier, this region also has no reliable oases making any journey a gamble. 665 ID_STRUC_IMP_NO_OASES $ID_STRUC_IMP_NO_OASES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="No oases If the trackless sands were not a sufficient barrier, this region also has no reliable oases making any journey a gamble. 665 ID_STRUC_IMP_NO_OASES $ID_STRUC_IMP_NO_OASES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0665-no-oases.html">No oases</a></td>
           <td>665</td>
           <td>1</td>
@@ -375,7 +411,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Div-e-Bad&#x27;s Fury The mountain people speak of Div-e-Bad, a malicious wind demon who strikes down travelers daring to cross its remote paths alone. 729 ID_STRUC_IMP_DIV_E_BAD $ID_STRUC_IMP_DIV_E_BAD 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Div-e-Bad&#x27;s Fury The mountain people speak of Div-e-Bad, a malicious wind demon who strikes down travelers daring to cross its remote paths alone. 729 ID_STRUC_IMP_DIV_E_BAD $ID_STRUC_IMP_DIV_E_BAD 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Food Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0729-div-e-bad-s-fury.html">Div-e-Bad&#x27;s Fury</a></td>
           <td>729</td>
           <td>2</td>
@@ -389,7 +425,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Fire of Huldufólk Farmers warn that Huldufólk, the hidden folk, appear as flickering lights, guiding or misleading travelers depending on their purpose. 736 ID_STRUC_IMP_HULDUFOLK $ID_STRUC_IMP_HULDUFOLK 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Fire of Huldufólk Farmers warn that Huldufólk, the hidden folk, appear as flickering lights, guiding or misleading travelers depending on their purpose. 736 ID_STRUC_IMP_HULDUFOLK $ID_STRUC_IMP_HULDUFOLK 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Food Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0736-fire-of-hulduf-lk.html">Fire of Huldufólk</a></td>
           <td>736</td>
           <td>2</td>
@@ -403,7 +439,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Shadow of Pepo Locals murmur of the Pepo, a shadow spirit who follows those who linger by riverbanks, thought to drain the strength of any who anger it. 740 ID_STRUC_IMP_PEPO $ID_STRUC_IMP_PEPO 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Shadow of Pepo Locals murmur of the Pepo, a shadow spirit who follows those who linger by riverbanks, thought to drain the strength of any who anger it. 740 ID_STRUC_IMP_PEPO $ID_STRUC_IMP_PEPO 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Food Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0740-shadow-of-pepo.html">Shadow of Pepo</a></td>
           <td>740</td>
           <td>2</td>
@@ -417,7 +453,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Gahou&#x27;s Light Farmers say that lights seen in fields belong to the Gahou, ancient spirits who offer guidance to some and mischief to others. 743 ID_STRUC_IMP_GAHOU $ID_STRUC_IMP_GAHOU 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Gahou&#x27;s Light Farmers say that lights seen in fields belong to the Gahou, ancient spirits who offer guidance to some and mischief to others. 743 ID_STRUC_IMP_GAHOU $ID_STRUC_IMP_GAHOU 2 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Food Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0743-gahou-s-light.html">Gahou&#x27;s Light</a></td>
           <td>743</td>
           <td>2</td>
@@ -433,7 +469,7 @@ This altruistic Poacher and his vivacious companions have pledged to help the lo
 
         <tr class="structure-card" data-search="Thieves Gang Event building.
 
-If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can, and should, be countered by city guards or the watch because if left unchecked, they can evolve into something more powerful and nefarious than a mere Thieves Gang. 215 ID_STRUC_EVT_THIEVES_GANG $ID_STRUC_EVT_THIEVES_GANG 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce     Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can, and should, be countered by city guards or the watch because if left unchecked, they can evolve into something more powerful and nefarious than a mere Thieves Gang. 215 ID_STRUC_EVT_THIEVES_GANG $ID_STRUC_EVT_THIEVES_GANG 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce     Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0 Simple Taxation Penalty: 20% Commerce Penalty: 15% Stewardship Penalty: 20%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0215-thieves-gang.html">Thieves Gang</a></td>
           <td>215</td>
           <td>1</td>
@@ -449,7 +485,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
 
         <tr class="structure-card" data-search="Thieves Hideout Event building.
 
-If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can and should be countered by city guards or watch because if left unchecked, they can evolve into something more powerful and nefarious than a mere Thieves Hideout. 216 ID_STRUC_EVT_THIEVES_HIDEOUT $ID_STRUC_EVT_THIEVES_HIDEOUT 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce     Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can and should be countered by city guards or watch because if left unchecked, they can evolve into something more powerful and nefarious than a mere Thieves Hideout. 216 ID_STRUC_EVT_THIEVES_HIDEOUT $ID_STRUC_EVT_THIEVES_HIDEOUT 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce     Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0 Simple Taxation Penalty: 35% Commerce Penalty: 20% Stewardship Penalty: 30%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0216-thieves-hideout.html">Thieves Hideout</a></td>
           <td>216</td>
           <td>1</td>
@@ -465,7 +501,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
 
         <tr class="structure-card" data-search="Thieves Guild Event building.
 
-If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can and should be countered by city guards or watch because if left unchecked, they can evolve into something more powerful and nefarious than a mere Thieves Guild. 217 ID_STRUC_EVT_THIEVES_GUILD $ID_STRUC_EVT_THIEVES_GUILD 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce  Luxury   Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can and should be countered by city guards or watch because if left unchecked, they can evolve into something more powerful and nefarious than a mere Thieves Guild. 217 ID_STRUC_EVT_THIEVES_GUILD $ID_STRUC_EVT_THIEVES_GUILD 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce  Luxury   Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0 Simple Taxation Penalty: 50% Commerce Penalty: 25% Stewardship Penalty: 40%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0217-thieves-guild.html">Thieves Guild</a></td>
           <td>217</td>
           <td>1</td>
@@ -481,7 +517,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
 
         <tr class="structure-card" data-search="Underground Network Event building.
 
-If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can and should be countered by city guards or watch. 218 ID_STRUC_EVT_UNDERGROUND_NETWORK $ID_STRUC_EVT_UNDERGROUND_NETWORK 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce  Luxury   Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+If Stewardship is twice as low as income in a region, then thieves can move in and rob and kidnap merchants and wealthy citizens. They can and should be countered by city guards or watch. 218 ID_STRUC_EVT_UNDERGROUND_NETWORK $ID_STRUC_EVT_UNDERGROUND_NETWORK 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce  Luxury   Silver Gold Silk Precious Stones Income_Output Steward_Output Bonus_Income 0 0 0 Simple Taxation Penalty: 75% Commerce Penalty: 35% Stewardship Penalty: 60% Authority Penalty: 10% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0218-underground-network.html">Underground Network</a></td>
           <td>218</td>
           <td>1</td>
@@ -495,7 +531,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
           <td>Money -15 | from: Silver, Gold, Silk, Precious Stones</td>
         </tr>
 
-        <tr class="structure-card" data-search="Bandit Lair Bandits are present in this region and will regularly steal and bully the local population, until they are dealt with. 588 ID_STRUC_IMP_BANDITS $ID_STRUC_IMP_BANDITS 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Food_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Bandit Lair Bandits are present in this region and will regularly steal and bully the local population, until they are dealt with. 588 ID_STRUC_IMP_BANDITS $ID_STRUC_IMP_BANDITS 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Food_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0588-bandit-lair.html">Bandit Lair</a></td>
           <td>588</td>
           <td>1</td>
@@ -509,7 +545,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Ransomers Ransomers operate in this region and regularly stop and abduct people and merchants. 589 ID_STRUC_IMP_RANSOMERS $ID_STRUC_IMP_RANSOMERS 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Manpower_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Ransomers Ransomers operate in this region and regularly stop and abduct people and merchants. 589 ID_STRUC_IMP_RANSOMERS $ID_STRUC_IMP_RANSOMERS 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Manpower_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 10" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0589-ransomers.html">Ransomers</a></td>
           <td>589</td>
           <td>1</td>
@@ -523,7 +559,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Abundant Streams The many local streams could provide good irrigation, but at the moment they prevent farming and cut communications 606 ID_STRUC_IMP_ABUNDANT_STREAMS $ID_STRUC_IMP_ABUNDANT_STREAMS 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Food_Output Infra_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Abundant Streams The many local streams could provide good irrigation, but at the moment they prevent farming and cut communications 606 ID_STRUC_IMP_ABUNDANT_STREAMS $ID_STRUC_IMP_ABUNDANT_STREAMS 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Food_Output Infra_Output Income_Output  0 0 0 Commerce Bonus: 8%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0606-abundant-streams.html">Abundant Streams</a></td>
           <td>606</td>
           <td>1</td>
@@ -537,7 +573,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Pervading Bramble The local fields are infested with huge bramble patches higher than any man. 607 ID_STRUC_IMP_PERVADING_BRAMBLE $ID_STRUC_IMP_PERVADING_BRAMBLE 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Pervading Bramble The local fields are infested with huge bramble patches higher than any man. 607 ID_STRUC_IMP_PERVADING_BRAMBLE $ID_STRUC_IMP_PERVADING_BRAMBLE 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Food_Output Infra_Output  0 0 0 Commerce Bonus: 8%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0607-pervading-bramble.html">Pervading Bramble</a></td>
           <td>607</td>
           <td>1</td>
@@ -551,7 +587,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Blaze of Umm al-Duwais Merchants tell of Umm al-Duwais, a spirit taking the form of a beautiful woman, luring enamored wanderers to a fiery, cursed end. 725 ID_STRUC_IMP_UMM_DUWAIS $ID_STRUC_IMP_UMM_DUWAIS 2 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Blaze of Umm al-Duwais Merchants tell of Umm al-Duwais, a spirit taking the form of a beautiful woman, luring enamored wanderers to a fiery, cursed end. 725 ID_STRUC_IMP_UMM_DUWAIS $ID_STRUC_IMP_UMM_DUWAIS 2 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Commerce Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0725-blaze-of-umm-al-duwais.html">Blaze of Umm al-Duwais</a></td>
           <td>725</td>
           <td>2</td>
@@ -569,7 +605,7 @@ If Stewardship is twice as low as income in a region, then thieves can move in a
 
 Rats tend to appear where there is a lot of Food while Health is bad or the population count is high. Use a Rat Catcher to get rid of them (and prevent their return, most of the time). Having one hundred rats is an issue, having ten thousand is a big problem, so don&#x27;t be surprised to see more and more of the varmints!
 
-Rats are known to lead to the appearance of epidemics or even worse, like a plague (EVENT). 120 ID_STRUC_EVT_RATS $ID_STRUC_EVT_RATS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health     Grain    Food_Output Bonus_Food 0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+Rats are known to lead to the appearance of epidemics or even worse, like a plague (EVENT). 120 ID_STRUC_EVT_RATS $ID_STRUC_EVT_RATS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health     Grain    Food_Output Bonus_Food 0 0 0 Health Penalty: 6% Charhealth Penalty: 3%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0120-rats.html">Rats</a></td>
           <td>120</td>
           <td>1</td>
@@ -583,7 +619,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>Food -1 | from: Grain</td>
         </tr>
 
-        <tr class="structure-card" data-search="Seasonal Flooding Local rivers have a tendency to flood every year, often ruining crops and sometime whole hamlets. Dikes will be necessary at some point. 593 ID_STRUC_IMP_SEASONAL_FLOODING $ID_STRUC_IMP_SEASONAL_FLOODING 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Manpower_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Seasonal Flooding Local rivers have a tendency to flood every year, often ruining crops and sometime whole hamlets. Dikes will be necessary at some point. 593 ID_STRUC_IMP_SEASONAL_FLOODING $ID_STRUC_IMP_SEASONAL_FLOODING 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Manpower_Output Income_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0593-seasonal-flooding.html">Seasonal Flooding</a></td>
           <td>593</td>
           <td>1</td>
@@ -597,7 +633,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Waterlogged soils The soils are water-soaked in many places and only significant drainage efforts can solve this problem. 594 ID_STRUC_IMP_WATERLOGGED_SOILS $ID_STRUC_IMP_WATERLOGGED_SOILS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Waterlogged soils The soils are water-soaked in many places and only significant drainage efforts can solve this problem. 594 ID_STRUC_IMP_WATERLOGGED_SOILS $ID_STRUC_IMP_WATERLOGGED_SOILS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0 Health Penalty: 3%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0594-waterlogged-soils.html">Waterlogged soils</a></td>
           <td>594</td>
           <td>1</td>
@@ -611,7 +647,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Bubbling Bog A foul bog renders many of our peasants  ill and only significant drainage efforts can solve this problem. 595 ID_STRUC_IMP_BUBBLING_BOG $ID_STRUC_IMP_BUBBLING_BOG 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Bubbling Bog A foul bog renders many of our peasants  ill and only significant drainage efforts can solve this problem. 595 ID_STRUC_IMP_BUBBLING_BOG $ID_STRUC_IMP_BUBBLING_BOG 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0 Health Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0595-bubbling-bog.html">Bubbling Bog</a></td>
           <td>595</td>
           <td>1</td>
@@ -625,7 +661,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Numerous Cliffs This region is pock-marked with too many cliffs, hampering transport and commerce. A major effort in bridge building would alleviate the issue though. 597 ID_STRUC_IMP_NUMEROUS_CLIFFS $ID_STRUC_IMP_NUMEROUS_CLIFFS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Numerous Cliffs This region is pock-marked with too many cliffs, hampering transport and commerce. A major effort in bridge building would alleviate the issue though. 597 ID_STRUC_IMP_NUMEROUS_CLIFFS $ID_STRUC_IMP_NUMEROUS_CLIFFS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Income_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0597-numerous-cliffs.html">Numerous Cliffs</a></td>
           <td>597</td>
           <td>1</td>
@@ -639,7 +675,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Impenetrable Forest The local forests are dense, to work the lands in this region would require a great deal of effort. 604 ID_STRUC_IMP_IMPENETRABLE_FOREST $ID_STRUC_IMP_IMPENETRABLE_FOREST 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Impenetrable Forest The local forests are dense, to work the lands in this region would require a great deal of effort. 604 ID_STRUC_IMP_IMPENETRABLE_FOREST $ID_STRUC_IMP_IMPENETRABLE_FOREST 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Income_Output  0 0 0 Infra Bonus: 8%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0604-impenetrable-forest.html">Impenetrable Forest</a></td>
           <td>604</td>
           <td>1</td>
@@ -653,7 +689,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Extremely Dense Forest The woods in this region are famous for their untouched beauty, the problem is that there is almost no way to move through them. 605 ID_STRUC_IMP_EXTREMELY_DENSE_FOREST $ID_STRUC_IMP_EXTREMELY_DENSE_FOREST 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Extremely Dense Forest The woods in this region are famous for their untouched beauty, the problem is that there is almost no way to move through them. 605 ID_STRUC_IMP_EXTREMELY_DENSE_FOREST $ID_STRUC_IMP_EXTREMELY_DENSE_FOREST 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Income_Output  0 0 0 Infra Bonus: 8%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0605-extremely-dense-forest.html">Extremely Dense Forest</a></td>
           <td>605</td>
           <td>1</td>
@@ -667,7 +703,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Severe Ravines This region is pock-marked with too many ravines, hampering transport and commerce. A major effort in bridge building would alleviate the issue though. 614 ID_STRUC_IMP_SEVERE_RAVINES $ID_STRUC_IMP_SEVERE_RAVINES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Severe Ravines This region is pock-marked with too many ravines, hampering transport and commerce. A major effort in bridge building would alleviate the issue though. 614 ID_STRUC_IMP_SEVERE_RAVINES $ID_STRUC_IMP_SEVERE_RAVINES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Income_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0614-severe-ravines.html">Severe Ravines</a></td>
           <td>614</td>
           <td>1</td>
@@ -681,7 +717,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rocky Outcrops The farmland is broken up by rocks and boulders making cultivation difficult. 615 ID_STRUC_IMP_ROCKY_OUTCROPS $ID_STRUC_IMP_ROCKY_OUTCROPS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rocky Outcrops The farmland is broken up by rocks and boulders making cultivation difficult. 615 ID_STRUC_IMP_ROCKY_OUTCROPS $ID_STRUC_IMP_ROCKY_OUTCROPS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0615-rocky-outcrops.html">Rocky Outcrops</a></td>
           <td>615</td>
           <td>1</td>
@@ -695,7 +731,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Frequent Landslide Due to the local geography, this region is prones to landslides that cut roads and even threaten villages. 616 ID_STRUC_IMP_FREQUENT_LANDSLIDE $ID_STRUC_IMP_FREQUENT_LANDSLIDE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Frequent Landslide Due to the local geography, this region is prones to landslides that cut roads and even threaten villages. 616 ID_STRUC_IMP_FREQUENT_LANDSLIDE $ID_STRUC_IMP_FREQUENT_LANDSLIDE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Manpower_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0616-frequent-landslide.html">Frequent Landslide</a></td>
           <td>616</td>
           <td>1</td>
@@ -709,7 +745,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Poisonous Reptiles This region is plagued by poisonous reptiles, a threat to man and beast alike. 622 ID_STRUC_IMP_POISONOUS_REPTILES $ID_STRUC_IMP_POISONOUS_REPTILES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Infra_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Poisonous Reptiles This region is plagued by poisonous reptiles, a threat to man and beast alike. 622 ID_STRUC_IMP_POISONOUS_REPTILES $ID_STRUC_IMP_POISONOUS_REPTILES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Infra_Output Income_Output  0 0 0 Health Penalty: 3%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0622-poisonous-reptiles.html">Poisonous Reptiles</a></td>
           <td>622</td>
           <td>1</td>
@@ -723,7 +759,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Severe arroyos The land is broken by steep sided waterways making travel very difficult. 624 ID_STRUC_IMP_SEVERE_ARROYOS $ID_STRUC_IMP_SEVERE_ARROYOS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Severe arroyos The land is broken by steep sided waterways making travel very difficult. 624 ID_STRUC_IMP_SEVERE_ARROYOS $ID_STRUC_IMP_SEVERE_ARROYOS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0624-severe-arroyos.html">Severe arroyos</a></td>
           <td>624</td>
           <td>1</td>
@@ -737,7 +773,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Very Scarce Water This region is almost a desert, the lack of water limits human settlement and makes even basic farming a challenge. 625 ID_STRUC_IMP_VERY_SCARCE_WATER $ID_STRUC_IMP_VERY_SCARCE_WATER 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Very Scarce Water This region is almost a desert, the lack of water limits human settlement and makes even basic farming a challenge. 625 ID_STRUC_IMP_VERY_SCARCE_WATER $ID_STRUC_IMP_VERY_SCARCE_WATER 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0625-very-scarce-water.html">Very Scarce Water</a></td>
           <td>625</td>
           <td>1</td>
@@ -751,7 +787,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Polluted Water There is plenty of water, just that it is brackish and salty - a threat to man and beast. 628 ID_STRUC_IMP_POLLUTED_WATER $ID_STRUC_IMP_POLLUTED_WATER 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Polluted Water There is plenty of water, just that it is brackish and salty - a threat to man and beast. 628 ID_STRUC_IMP_POLLUTED_WATER $ID_STRUC_IMP_POLLUTED_WATER 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0 Health Penalty: 4%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0628-polluted-water.html">Polluted Water</a></td>
           <td>628</td>
           <td>1</td>
@@ -765,7 +801,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Sick animals Herds are affected by strange illnesses and the many flies that dominate in this region. 630 ID_STRUC_IMP_SICK_ANIMALS $ID_STRUC_IMP_SICK_ANIMALS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Sick animals Herds are affected by strange illnesses and the many flies that dominate in this region. 630 ID_STRUC_IMP_SICK_ANIMALS $ID_STRUC_IMP_SICK_ANIMALS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Infra_Output  0 0 0 Health Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0630-sick-animals.html">Sick animals</a></td>
           <td>630</td>
           <td>1</td>
@@ -779,7 +815,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Strange Sickness Men sicken and die in this region, some blame the bad air but others wonder if the reason is the teeming swarms of insects. 631 ID_STRUC_IMP_STRANGE_SICKNESS $ID_STRUC_IMP_STRANGE_SICKNESS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Manpower_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Strange Sickness Men sicken and die in this region, some blame the bad air but others wonder if the reason is the teeming swarms of insects. 631 ID_STRUC_IMP_STRANGE_SICKNESS $ID_STRUC_IMP_STRANGE_SICKNESS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Manpower_Output Piety_Output  0 0 0 Health Penalty: 7%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0631-strange-sickness.html">Strange Sickness</a></td>
           <td>631</td>
           <td>1</td>
@@ -793,7 +829,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Unbroken Range The sharp peaks and narrow valleys of this region make travel all but impossible. 634 ID_STRUC_IMP_UNBROKEN_RANGE $ID_STRUC_IMP_UNBROKEN_RANGE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Unbroken Range The sharp peaks and narrow valleys of this region make travel all but impossible. 634 ID_STRUC_IMP_UNBROKEN_RANGE $ID_STRUC_IMP_UNBROKEN_RANGE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0634-unbroken-range.html">Unbroken Range</a></td>
           <td>634</td>
           <td>1</td>
@@ -807,7 +843,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Frequent Earthquakes The frequent earthquakes disrupt local roads and make rockfalls a regular risk. At the very least, significant efforts must be made to secure the main paths. 635 ID_STRUC_IMP_FREQUENT_EARTHQUAKES $ID_STRUC_IMP_FREQUENT_EARTHQUAKES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Metal_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Frequent Earthquakes The frequent earthquakes disrupt local roads and make rockfalls a regular risk. At the very least, significant efforts must be made to secure the main paths. 635 ID_STRUC_IMP_FREQUENT_EARTHQUAKES $ID_STRUC_IMP_FREQUENT_EARTHQUAKES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output Metal_Output Manpower_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0635-frequent-earthquakes.html">Frequent Earthquakes</a></td>
           <td>635</td>
           <td>1</td>
@@ -821,7 +857,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Severe Avalanches The steep sided slopes are avalanche prone, a permanent threat to both men and animals. 636 ID_STRUC_IMP_SEVERE_AVALANCHES $ID_STRUC_IMP_SEVERE_AVALANCHES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Metal_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Severe Avalanches The steep sided slopes are avalanche prone, a permanent threat to both men and animals. 636 ID_STRUC_IMP_SEVERE_AVALANCHES $ID_STRUC_IMP_SEVERE_AVALANCHES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Metal_Output Manpower_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0636-severe-avalanches.html">Severe Avalanches</a></td>
           <td>636</td>
           <td>1</td>
@@ -835,7 +871,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Chasms Travel is nearly impossible due to the steep sided valleys. 637 ID_STRUC_IMP_CHASMS $ID_STRUC_IMP_CHASMS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Chasms Travel is nearly impossible due to the steep sided valleys. 637 ID_STRUC_IMP_CHASMS $ID_STRUC_IMP_CHASMS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0637-chasms.html">Chasms</a></td>
           <td>637</td>
           <td>1</td>
@@ -849,7 +885,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Impracticable Gorge The local gorges are so steep and narrow that none can travel their length. 638 ID_STRUC_IMP_IMPRACTICABLE_GORGE $ID_STRUC_IMP_IMPRACTICABLE_GORGE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Impracticable Gorge The local gorges are so steep and narrow that none can travel their length. 638 ID_STRUC_IMP_IMPRACTICABLE_GORGE $ID_STRUC_IMP_IMPRACTICABLE_GORGE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0638-impracticable-gorge.html">Impracticable Gorge</a></td>
           <td>638</td>
           <td>1</td>
@@ -863,7 +899,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Extreme Height Even the passes in this region are so high that men are short of breath as they try to cross them. 641 ID_STRUC_IMP_EXTREME_HEIGHT $ID_STRUC_IMP_EXTREME_HEIGHT 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Extreme Height Even the passes in this region are so high that men are short of breath as they try to cross them. 641 ID_STRUC_IMP_EXTREME_HEIGHT $ID_STRUC_IMP_EXTREME_HEIGHT 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Infra_Output  0 0 0 Health Penalty: 6%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0641-extreme-height.html">Extreme Height</a></td>
           <td>641</td>
           <td>1</td>
@@ -877,7 +913,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Glaciers An endless sea of ice dominates this region making it all but impassable. 642 ID_STRUC_IMP_GLACIERS $ID_STRUC_IMP_GLACIERS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Glaciers An endless sea of ice dominates this region making it all but impassable. 642 ID_STRUC_IMP_GLACIERS $ID_STRUC_IMP_GLACIERS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Infra_Output  0 0 0 Health Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0642-glaciers.html">Glaciers</a></td>
           <td>642</td>
           <td>1</td>
@@ -891,7 +927,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Volcano The local volcano is prone to eruptions. Even when it is not active, the foul vapors from brimstone pose a threat to both humans and animals. 643 ID_STRUC_IMP_VOLCANO $ID_STRUC_IMP_VOLCANO 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Volcano The local volcano is prone to eruptions. Even when it is not active, the foul vapors from brimstone pose a threat to both humans and animals. 643 ID_STRUC_IMP_VOLCANO $ID_STRUC_IMP_VOLCANO 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Manpower_Output  0 0 0 Health Penalty: 8% Flavor: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0643-volcano.html">Volcano</a></td>
           <td>643</td>
           <td>1</td>
@@ -905,7 +941,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Venomous Beasts This region is plagued by poisonous reptiles, a threat to man and beast 645 ID_STRUC_IMP_VENOMOUS_BEASTS $ID_STRUC_IMP_VENOMOUS_BEASTS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Manpower_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Venomous Beasts This region is plagued by poisonous reptiles, a threat to man and beast 645 ID_STRUC_IMP_VENOMOUS_BEASTS $ID_STRUC_IMP_VENOMOUS_BEASTS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Manpower_Output  0 0 0 Health Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0645-venomous-beasts.html">Venomous Beasts</a></td>
           <td>645</td>
           <td>1</td>
@@ -919,7 +955,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Trackless Fens The local fens are constantly shifting making any attempt to cross them perilous. 649 ID_STRUC_IMP_TRACKLESS_FENS $ID_STRUC_IMP_TRACKLESS_FENS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Trackless Fens The local fens are constantly shifting making any attempt to cross them perilous. 649 ID_STRUC_IMP_TRACKLESS_FENS $ID_STRUC_IMP_TRACKLESS_FENS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0649-trackless-fens.html">Trackless Fens</a></td>
           <td>649</td>
           <td>1</td>
@@ -933,7 +969,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Vast Swamp The local swamps stretch for miles making travel almost impossible. 650 ID_STRUC_IMP_VAST_SWAMP $ID_STRUC_IMP_VAST_SWAMP 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Vast Swamp The local swamps stretch for miles making travel almost impossible. 650 ID_STRUC_IMP_VAST_SWAMP $ID_STRUC_IMP_VAST_SWAMP 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0650-vast-swamp.html">Vast Swamp</a></td>
           <td>650</td>
           <td>1</td>
@@ -947,7 +983,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Fuming Bog The foul smells of the local marshes are enough to deter all but the most foolhardy from venturing too far from the few tracks. 651 ID_STRUC_IMP_FUMING_BOG $ID_STRUC_IMP_FUMING_BOG 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Fuming Bog The foul smells of the local marshes are enough to deter all but the most foolhardy from venturing too far from the few tracks. 651 ID_STRUC_IMP_FUMING_BOG $ID_STRUC_IMP_FUMING_BOG 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output Infra_Output  0 0 0 Health Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0651-fuming-bog.html">Fuming Bog</a></td>
           <td>651</td>
           <td>1</td>
@@ -961,7 +997,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Insect and Vermins Biting insects are so common that even the bravest man can be reduced to tears, no-one is prepared to try and cross the local marshes. 652 ID_STRUC_IMP_INSECT_AND_VERMINS $ID_STRUC_IMP_INSECT_AND_VERMINS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Insect and Vermins Biting insects are so common that even the bravest man can be reduced to tears, no-one is prepared to try and cross the local marshes. 652 ID_STRUC_IMP_INSECT_AND_VERMINS $ID_STRUC_IMP_INSECT_AND_VERMINS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Infra_Output  0 0 0 Health Penalty: 7%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0652-insect-and-vermins.html">Insect and Vermins</a></td>
           <td>652</td>
           <td>1</td>
@@ -975,7 +1011,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Extreme Weather The summers are too hot and the winters too cold, apart from that this would be a good region to settle. 657 ID_STRUC_IMP_EXTREME_WEATHER $ID_STRUC_IMP_EXTREME_WEATHER 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Extreme Weather The summers are too hot and the winters too cold, apart from that this would be a good region to settle. 657 ID_STRUC_IMP_EXTREME_WEATHER $ID_STRUC_IMP_EXTREME_WEATHER 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Food_Output  0 0 0 Health Penalty: 5%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0657-extreme-weather.html">Extreme Weather</a></td>
           <td>657</td>
           <td>1</td>
@@ -989,7 +1025,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Shifting Dunes Wind and geography combine to produce massive shifting dunes that make agriculture impossible and travel perilous. 664 ID_STRUC_IMP_SHIFTING_DUNES $ID_STRUC_IMP_SHIFTING_DUNES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Shifting Dunes Wind and geography combine to produce massive shifting dunes that make agriculture impossible and travel perilous. 664 ID_STRUC_IMP_SHIFTING_DUNES $ID_STRUC_IMP_SHIFTING_DUNES 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0664-shifting-dunes.html">Shifting Dunes</a></td>
           <td>664</td>
           <td>1</td>
@@ -1003,7 +1039,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Depressions The steep sided depression that dominates this region is a major barrier to travel. 666 ID_STRUC_IMP_DEPRESSIONS $ID_STRUC_IMP_DEPRESSIONS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Depressions The steep sided depression that dominates this region is a major barrier to travel. 666 ID_STRUC_IMP_DEPRESSIONS $ID_STRUC_IMP_DEPRESSIONS 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0666-depressions.html">Depressions</a></td>
           <td>666</td>
           <td>1</td>
@@ -1017,7 +1053,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Dune Storm Sudden winds can spring up, and the resultant sand storms erase all tracks. 667 ID_STRUC_IMP_DUNE_STORM $ID_STRUC_IMP_DUNE_STORM 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Dune Storm Sudden winds can spring up, and the resultant sand storms erase all tracks. 667 ID_STRUC_IMP_DUNE_STORM $ID_STRUC_IMP_DUNE_STORM 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output Income_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0667-dune-storm.html">Dune Storm</a></td>
           <td>667</td>
           <td>1</td>
@@ -1031,7 +1067,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Jagged coastline The coasts here are very rugged, which greatly hinders trade and agriculture. 705 ID_STRUC_IMP_JAGGED_COASTLINE $ID_STRUC_IMP_JAGGED_COASTLINE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Jagged coastline The coasts here are very rugged, which greatly hinders trade and agriculture. 705 ID_STRUC_IMP_JAGGED_COASTLINE $ID_STRUC_IMP_JAGGED_COASTLINE 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Food_Output Infra_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0705-jagged-coastline.html">Jagged coastline</a></td>
           <td>705</td>
           <td>1</td>
@@ -1045,7 +1081,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Curse of Hinn Villagers say Hinn spirits haunt oasis pools, luring the greedy and selfish into waters from which they never emerge. 727 ID_STRUC_IMP_HINN $ID_STRUC_IMP_HINN 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Curse of Hinn Villagers say Hinn spirits haunt oasis pools, luring the greedy and selfish into waters from which they never emerge. 727 ID_STRUC_IMP_HINN $ID_STRUC_IMP_HINN 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Infra Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0727-curse-of-hinn.html">Curse of Hinn</a></td>
           <td>727</td>
           <td>2</td>
@@ -1059,7 +1095,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Fire of Azhi Dahaka Some recount seeing the scorched trail of Azhi Dahaka, a demon of wrath, whose flames punish trespassers in remote hills. 728 ID_STRUC_IMP_AZHI_DAHAKA $ID_STRUC_IMP_AZHI_DAHAKA 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Fire of Azhi Dahaka Some recount seeing the scorched trail of Azhi Dahaka, a demon of wrath, whose flames punish trespassers in remote hills. 728 ID_STRUC_IMP_AZHI_DAHAKA $ID_STRUC_IMP_AZHI_DAHAKA 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Infra Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0728-fire-of-azhi-dahaka.html">Fire of Azhi Dahaka</a></td>
           <td>728</td>
           <td>2</td>
@@ -1073,7 +1109,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Call of Yakshini Villagers warn of Yakshini, a ghostly beauty, whose alluring call leads the foolish to drown in rivers and vanish from the forests. 730 ID_STRUC_IMP_YAKSHINI $ID_STRUC_IMP_YAKSHINI 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Call of Yakshini Villagers warn of Yakshini, a ghostly beauty, whose alluring call leads the foolish to drown in rivers and vanish from the forests. 730 ID_STRUC_IMP_YAKSHINI $ID_STRUC_IMP_YAKSHINI 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Infra Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0730-call-of-yakshini.html">Call of Yakshini</a></td>
           <td>730</td>
           <td>2</td>
@@ -1087,7 +1123,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Draugar&#x27;s Watch Fishermen say Draugar, vengeful spirits of the drowned, wait beneath the waters, pulling the unwary into a frozen embrace. 737 ID_STRUC_IMP_DRAUGAR $ID_STRUC_IMP_DRAUGAR 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Draugar&#x27;s Watch Fishermen say Draugar, vengeful spirits of the drowned, wait beneath the waters, pulling the unwary into a frozen embrace. 737 ID_STRUC_IMP_DRAUGAR $ID_STRUC_IMP_DRAUGAR 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Infra Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0737-draugar-s-watch.html">Draugar&#x27;s Watch</a></td>
           <td>737</td>
           <td>2</td>
@@ -1101,7 +1137,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Kisoka&#x27;s Lament Elders warn that Kisoka, a river spirit seen as mist, distracts travelers from their path, leaving them disoriented. 738 ID_STRUC_IMP_KISOKA $ID_STRUC_IMP_KISOKA 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Kisoka&#x27;s Lament Elders warn that Kisoka, a river spirit seen as mist, distracts travelers from their path, leaving them disoriented. 738 ID_STRUC_IMP_KISOKA $ID_STRUC_IMP_KISOKA 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Infra Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0738-kisoka-s-lament.html">Kisoka&#x27;s Lament</a></td>
           <td>738</td>
           <td>2</td>
@@ -1115,7 +1151,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Koulou-Koulou Spirit In the forests, people speak of the Koulou-Koulou, protectors who punish those who cut trees without offering respect. 741 ID_STRUC_IMP_KOULOU_KOULOU $ID_STRUC_IMP_KOULOU_KOULOU 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Koulou-Koulou Spirit In the forests, people speak of the Koulou-Koulou, protectors who punish those who cut trees without offering respect. 741 ID_STRUC_IMP_KOULOU_KOULOU $ID_STRUC_IMP_KOULOU_KOULOU 2 $POP_JOB_INFRA Infrastructure $JOB_KIND_INFRA Infrastructure         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Infra Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0741-koulou-koulou-spirit.html">Koulou-Koulou Spirit</a></td>
           <td>741</td>
           <td>2</td>
@@ -1129,7 +1165,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Native Raiders Native raiders use this region as a gathering place and will from time to time launch a quick raid against the population. 587 ID_STRUC_IMP_NATIVE_RAIDERS $ID_STRUC_IMP_NATIVE_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Native Raiders Native raiders use this region as a gathering place and will from time to time launch a quick raid against the population. 587 ID_STRUC_IMP_NATIVE_RAIDERS $ID_STRUC_IMP_NATIVE_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0587-native-raiders.html">Native Raiders</a></td>
           <td>587</td>
           <td>1</td>
@@ -1143,7 +1179,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Woodsmen The surrounding forest villages are inhabited by people hostile to any form of authority. 601 ID_STRUC_IMP_SAVAGE_WOODSMEN $ID_STRUC_IMP_SAVAGE_WOODSMEN 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Woodsmen The surrounding forest villages are inhabited by people hostile to any form of authority. 601 ID_STRUC_IMP_SAVAGE_WOODSMEN $ID_STRUC_IMP_SAVAGE_WOODSMEN 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Income_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0601-woodsmen.html">Woodsmen</a></td>
           <td>601</td>
           <td>1</td>
@@ -1157,7 +1193,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Fiercely independent Hillsmen The local hillsmen are fierce and challenge any attempts to cultivate the lands. 613 ID_STRUC_IMP_SAVAGES_HILLSMEN $ID_STRUC_IMP_SAVAGES_HILLSMEN 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Metal_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Fiercely independent Hillsmen The local hillsmen are fierce and challenge any attempts to cultivate the lands. 613 ID_STRUC_IMP_SAVAGES_HILLSMEN $ID_STRUC_IMP_SAVAGES_HILLSMEN 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Metal_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0613-fiercely-independent-hillsmen.html">Fiercely independent Hillsmen</a></td>
           <td>613</td>
           <td>1</td>
@@ -1171,7 +1207,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Nomadic Raiders Nomadic raiders use this region as a gathering place and will from time to time launch a quick raid against the population. 621 ID_STRUC_IMP_NOMADIC_RAIDERS $ID_STRUC_IMP_NOMADIC_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Nomadic Raiders Nomadic raiders use this region as a gathering place and will from time to time launch a quick raid against the population. 621 ID_STRUC_IMP_NOMADIC_RAIDERS $ID_STRUC_IMP_NOMADIC_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0621-nomadic-raiders.html">Nomadic Raiders</a></td>
           <td>621</td>
           <td>1</td>
@@ -1185,7 +1221,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Mountain Hunters These mountains are home to local hunters who know all the paths and threaten any new comers. 632 ID_STRUC_IMP_HUNTER_GATHERER $ID_STRUC_IMP_HUNTER_GATHERER 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Metal_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Mountain Hunters These mountains are home to local hunters who know all the paths and threaten any new comers. 632 ID_STRUC_IMP_HUNTER_GATHERER $ID_STRUC_IMP_HUNTER_GATHERER 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Infra_Output Metal_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0632-mountain-hunters.html">Mountain Hunters</a></td>
           <td>632</td>
           <td>1</td>
@@ -1199,7 +1235,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rumor of Hideous Snowmen Rumours abound of man-like creatures who walk the mountains. They may not exist, but few are prepared to find out. 640 ID_STRUC_IMP_RUMOR_HIDEOUS_SNOWMEN $ID_STRUC_IMP_RUMOR_HIDEOUS_SNOWMEN 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rumor of Hideous Snowmen Rumours abound of man-like creatures who walk the mountains. They may not exist, but few are prepared to find out. 640 ID_STRUC_IMP_RUMOR_HIDEOUS_SNOWMEN $ID_STRUC_IMP_RUMOR_HIDEOUS_SNOWMEN 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output  0 0 0 Manpower Penalty: 10%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0640-rumor-of-hideous-snowmen.html">Rumor of Hideous Snowmen</a></td>
           <td>640</td>
           <td>1</td>
@@ -1213,7 +1249,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Horseback Raiders Native raiders use this region as a gathering place and will from time to time launch a quick raid against the population. 654 ID_STRUC_IMP_HORSEBACK_RAIDERS $ID_STRUC_IMP_HORSEBACK_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Horseback Raiders Native raiders use this region as a gathering place and will from time to time launch a quick raid against the population. 654 ID_STRUC_IMP_HORSEBACK_RAIDERS $ID_STRUC_IMP_HORSEBACK_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0654-horseback-raiders.html">Horseback Raiders</a></td>
           <td>654</td>
           <td>1</td>
@@ -1227,7 +1263,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Irreducible Tribe The local tribes refuse to submit to any outsiders making it hard to cultivate this region. 655 ID_STRUC_IMP_IRREDUCIBLE_TRIBE $ID_STRUC_IMP_IRREDUCIBLE_TRIBE 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Irreducible Tribe The local tribes refuse to submit to any outsiders making it hard to cultivate this region. 655 ID_STRUC_IMP_IRREDUCIBLE_TRIBE $ID_STRUC_IMP_IRREDUCIBLE_TRIBE 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0655-irreducible-tribe.html">Irreducible Tribe</a></td>
           <td>655</td>
           <td>1</td>
@@ -1241,7 +1277,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Camel Raiders Native raiders use this region as a gathering place and will from time to time come out of the deserts on their camels and burn small settlements. 662 ID_STRUC_IMP_CAMEL_RAIDERS $ID_STRUC_IMP_CAMEL_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Camel Raiders Native raiders use this region as a gathering place and will from time to time come out of the deserts on their camels and burn small settlements. 662 ID_STRUC_IMP_CAMEL_RAIDERS $ID_STRUC_IMP_CAMEL_RAIDERS 1 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Food_Output Income_Output Steward_Output  0 0 0 Loyalty Penalty: 5" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0662-camel-raiders.html">Camel Raiders</a></td>
           <td>662</td>
           <td>1</td>
@@ -1255,7 +1291,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Eagle of Züün Elders speak of Züün, an invisible eagle that guards sacred lands, appearing to only those deemed worthy in moments of bravery. 734 ID_STRUC_IMP_ZUUN $ID_STRUC_IMP_ZUUN 2 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Eagle of Züün Elders speak of Züün, an invisible eagle that guards sacred lands, appearing to only those deemed worthy in moments of bravery. 734 ID_STRUC_IMP_ZUUN $ID_STRUC_IMP_ZUUN 2 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Mbp Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0734-eagle-of-z-n.html">Eagle of Züün</a></td>
           <td>734</td>
           <td>2</td>
@@ -1269,7 +1305,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Voice of Tengri Thunder is feared as Tengri&#x27;s voice, god of the sky, who tests the courage and resolve of all who dare cross the great steppe. 735 ID_STRUC_IMP_TENGRI $ID_STRUC_IMP_TENGRI 2 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Voice of Tengri Thunder is feared as Tengri&#x27;s voice, god of the sky, who tests the courage and resolve of all who dare cross the great steppe. 735 ID_STRUC_IMP_TENGRI $ID_STRUC_IMP_TENGRI 2 $POP_JOB_MILITARY Military $JOB_KIND_MILITARY Military         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Mbp Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0735-voice-of-tengri.html">Voice of Tengri</a></td>
           <td>735</td>
           <td>2</td>
@@ -1287,7 +1323,7 @@ Rats are known to lead to the appearance of epidemics or even worse, like a plag
 
 People in this region are not very faithful, and thus prone to turn themselves toward beliefs that are condemned by the clergy. This structure might appear in regions with low Loyalty, sapping Piety and favoring the creation of heresy. It never appears if there is an ongoing heresy though.
 
-EVENT: If successful enough, an Occultist will sell trinkets supposedly embued with esoteric power to the gullible. He will also attract a few henchmen as followers. 457 ID_STRUC_EVT_OCCULTIST $ID_STRUC_EVT_OCCULTIST 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious  Sulfur   Brass    Piety_Output Steward_Output Bonus_Income Bonus_Manpower Bonus_Piety 1 1 1" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
+EVENT: If successful enough, an Occultist will sell trinkets supposedly embued with esoteric power to the gullible. He will also attract a few henchmen as followers. 457 ID_STRUC_EVT_OCCULTIST $ID_STRUC_EVT_OCCULTIST 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious  Sulfur   Brass    Piety_Output Steward_Output Bonus_Income Bonus_Manpower Bonus_Piety 1 1 1 " data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
           <td><a href="0457-occultist.html">Occultist</a></td>
           <td>457</td>
           <td>1</td>
@@ -1303,7 +1339,7 @@ EVENT: If successful enough, an Occultist will sell trinkets supposedly embued w
 
         <tr class="structure-card" data-search="Cult Site This polytheist cult is rather secretive, although not completely closed to the outside world. The belief of the faithful here might be pagan, or a derivation of Hinduism or Buddhism.
 
-EVENT: In any case, this is what the local population desires and it will be defended fiercely: If the region falls under the control of a monotheistic religion, it will be removed while triggering a revolt. 458 ID_STRUC_EVT_CULT_SITE $ID_STRUC_EVT_CULT_SITE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious  Drugs &amp; Herbs   Livestock    Piety_Output Bonus_Piety 1 1 1" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
+EVENT: In any case, this is what the local population desires and it will be defended fiercely: If the region falls under the control of a monotheistic religion, it will be removed while triggering a revolt. 458 ID_STRUC_EVT_CULT_SITE $ID_STRUC_EVT_CULT_SITE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious  Drugs &amp; Herbs   Livestock    Piety_Output Bonus_Piety 1 1 1 " data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
           <td><a href="0458-cult-site.html">Cult Site</a></td>
           <td>458</td>
           <td>1</td>
@@ -1317,7 +1353,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>Piety -4 | from: Livestock</td>
         </tr>
 
-        <tr class="structure-card" data-search="Secret Cult This is a rare variation of the Cult Site building. The followers of this pagan faith are now hiding from the outside world, while growing their influence in the region. This is basically a stronger version of the Cult Site, with a more potent revolt if it is removed. 459 ID_STRUC_EVT_SECRET_CULT $ID_STRUC_EVT_SECRET_CULT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious  Frankincense   Precious Stones Wild Beasts   Piety_Output Bonus_Piety 1 1 1" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
+        <tr class="structure-card" data-search="Secret Cult This is a rare variation of the Cult Site building. The followers of this pagan faith are now hiding from the outside world, while growing their influence in the region. This is basically a stronger version of the Cult Site, with a more potent revolt if it is removed. 459 ID_STRUC_EVT_SECRET_CULT $ID_STRUC_EVT_SECRET_CULT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious  Frankincense   Precious Stones Wild Beasts   Piety_Output Bonus_Piety 1 1 1 War Weariness Penalty: 10% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
           <td><a href="0459-secret-cult.html">Secret Cult</a></td>
           <td>459</td>
           <td>1</td>
@@ -1331,7 +1367,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>Piety -6 | from: Precious Stones, Wild Beasts</td>
         </tr>
 
-        <tr class="structure-card" data-search="Minor Heresy The region features a budding heresy derived from the nation&#x27;s main religion. 590 ID_STRUC_IMP_RELIGIOUS_CULT $ID_STRUC_IMP_RELIGIOUS_CULT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Manpower_Output Income_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Minor Heresy The region features a budding heresy derived from the nation&#x27;s main religion. 590 ID_STRUC_IMP_RELIGIOUS_CULT $ID_STRUC_IMP_RELIGIOUS_CULT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Manpower_Output Income_Output Piety_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0590-minor-heresy.html">Minor Heresy</a></td>
           <td>590</td>
           <td>1</td>
@@ -1345,7 +1381,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rumor of Spirits in ruin There maybe nothing here, but the local farmers refuse to work the land near some ancient ruins. 603 ID_STRUC_IMP_RUMOR_OF_SPIRITS $ID_STRUC_IMP_RUMOR_OF_SPIRITS 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Income_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rumor of Spirits in ruin There maybe nothing here, but the local farmers refuse to work the land near some ancient ruins. 603 ID_STRUC_IMP_RUMOR_OF_SPIRITS $ID_STRUC_IMP_RUMOR_OF_SPIRITS 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Income_Output Piety_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0603-rumor-of-spirits-in-ruin.html">Rumor of Spirits in ruin</a></td>
           <td>603</td>
           <td>1</td>
@@ -1359,7 +1395,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Forest Shrine The locals seem to protect a forest shrine hidden deep in the woods. 608 ID_STRUC_IMP_FOREST_SHRINE $ID_STRUC_IMP_FOREST_SHRINE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Forest Shrine The locals seem to protect a forest shrine hidden deep in the woods. 608 ID_STRUC_IMP_FOREST_SHRINE $ID_STRUC_IMP_FOREST_SHRINE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0608-forest-shrine.html">Forest Shrine</a></td>
           <td>608</td>
           <td>1</td>
@@ -1373,7 +1409,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rumor of Haunting Spirit Local rumour tells of evil spirits in the local swamps. They may be not true but few dare to venture into those waterways. 646 ID_STRUC_IMP_RUMOR_HAUNTING_SPIRIT $ID_STRUC_IMP_RUMOR_HAUNTING_SPIRIT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rumor of Haunting Spirit Local rumour tells of evil spirits in the local swamps. They may be not true but few dare to venture into those waterways. 646 ID_STRUC_IMP_RUMOR_HAUNTING_SPIRIT $ID_STRUC_IMP_RUMOR_HAUNTING_SPIRIT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0 Gs Revolt Increase: 1% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0646-rumor-of-haunting-spirit.html">Rumor of Haunting Spirit</a></td>
           <td>646</td>
           <td>1</td>
@@ -1387,7 +1423,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rumor of a witch Locals tell of a powerful witch who lives in the local marshes striking fear into all. 647 ID_STRUC_IMP_RUMOR_WITCH $ID_STRUC_IMP_RUMOR_WITCH 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rumor of a witch Locals tell of a powerful witch who lives in the local marshes striking fear into all. 647 ID_STRUC_IMP_RUMOR_WITCH $ID_STRUC_IMP_RUMOR_WITCH 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0 Gs Health Penalty: 1% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0647-rumor-of-a-witch.html">Rumor of a witch</a></td>
           <td>647</td>
           <td>1</td>
@@ -1401,7 +1437,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rumor of Cursed Place No one is sure why, but this region has a ill reputation. Few men are prepared to venture into the swamplands … just in case. 648 ID_STRUC_IMP_RUMOR_CURSED_PLACE $ID_STRUC_IMP_RUMOR_CURSED_PLACE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rumor of Cursed Place No one is sure why, but this region has a ill reputation. Few men are prepared to venture into the swamplands … just in case. 648 ID_STRUC_IMP_RUMOR_CURSED_PLACE $ID_STRUC_IMP_RUMOR_CURSED_PLACE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0 Agetoken Penalty: 1%" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0648-rumor-of-cursed-place.html">Rumor of Cursed Place</a></td>
           <td>648</td>
           <td>1</td>
@@ -1415,7 +1451,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Whispering Sahir Desert dwellers murmur about Sahir, an ominous figure in the sands, who is said to reveal dark secrets to those who listen too long. 724 ID_STRUC_IMP_SAHIR $ID_STRUC_IMP_SAHIR 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Whispering Sahir Desert dwellers murmur about Sahir, an ominous figure in the sands, who is said to reveal dark secrets to those who listen too long. 724 ID_STRUC_IMP_SAHIR $ID_STRUC_IMP_SAHIR 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Convert Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0724-whispering-sahir.html">Whispering Sahir</a></td>
           <td>724</td>
           <td>2</td>
@@ -1429,7 +1465,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Ifrit&#x27;s Grudge Locals whisper that the Ifrit, a djinn of smoke and flame, haunts desolate ruins, exacting revenge on anyone who disturbs its resting place. 726 ID_STRUC_IMP_IFRIT $ID_STRUC_IMP_IFRIT 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Ifrit&#x27;s Grudge Locals whisper that the Ifrit, a djinn of smoke and flame, haunts desolate ruins, exacting revenge on anyone who disturbs its resting place. 726 ID_STRUC_IMP_IFRIT $ID_STRUC_IMP_IFRIT 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Convert Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0726-ifrit-s-grudge.html">Ifrit&#x27;s Grudge</a></td>
           <td>726</td>
           <td>2</td>
@@ -1443,7 +1479,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Serpent of Kaliya Elders warn that Kaliya, an ancient serpent spirit, dwells in rivers, unleashing wrath on those who fail to show respect. 732 ID_STRUC_IMP_KALIYA $ID_STRUC_IMP_KALIYA 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Serpent of Kaliya Elders warn that Kaliya, an ancient serpent spirit, dwells in rivers, unleashing wrath on those who fail to show respect. 732 ID_STRUC_IMP_KALIYA $ID_STRUC_IMP_KALIYA 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Convert Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0732-serpent-of-kaliya.html">Serpent of Kaliya</a></td>
           <td>732</td>
           <td>2</td>
@@ -1457,7 +1493,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Khorum Spirits Tales tell of Khorum spirits guarding mountain passes, turning wrathful against those who disrespect the land&#x27;s ancient sanctity. 733 ID_STRUC_IMP_KHORUM $ID_STRUC_IMP_KHORUM 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Khorum Spirits Tales tell of Khorum spirits guarding mountain passes, turning wrathful against those who disrespect the land&#x27;s ancient sanctity. 733 ID_STRUC_IMP_KHORUM $ID_STRUC_IMP_KHORUM 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Convert Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0733-khorum-spirits.html">Khorum Spirits</a></td>
           <td>733</td>
           <td>2</td>
@@ -1471,7 +1507,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Kinyonga&#x27;s Omen It&#x27;s said that Kinyonga, a chameleon spirit, can reveal ill fate to travelers who fail to respect nature&#x27;s signs. 739 ID_STRUC_IMP_KINYONGA $ID_STRUC_IMP_KINYONGA 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Kinyonga&#x27;s Omen It&#x27;s said that Kinyonga, a chameleon spirit, can reveal ill fate to travelers who fail to respect nature&#x27;s signs. 739 ID_STRUC_IMP_KINYONGA $ID_STRUC_IMP_KINYONGA 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Convert Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0739-kinyonga-s-omen.html">Kinyonga&#x27;s Omen</a></td>
           <td>739</td>
           <td>2</td>
@@ -1485,7 +1521,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Afwe&#x27;s Song Locals say the Afwe spirit sings at night, luring the lonely deep into the wilderness, from which few return. 742 ID_STRUC_IMP_AFWE $ID_STRUC_IMP_AFWE 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Afwe&#x27;s Song Locals say the Afwe spirit sings at night, luring the lonely deep into the wilderness, from which few return. 742 ID_STRUC_IMP_AFWE $ID_STRUC_IMP_AFWE 2 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Convert Penalty: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0742-afwe-s-song.html">Afwe&#x27;s Song</a></td>
           <td>742</td>
           <td>2</td>
@@ -1499,7 +1535,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Hovels Hovels will house the poorest part of the population, immediately adding +1 Population while using no building slot. They have a couple of drawbacks though: They can generate the Rats impediment (EVENT), and they reduce Siege Resistance. You can&#x27;t remove Hovels by yourself, except with a regional decision or with the Almshouse or equivalent. 503 ID_STRUC_HOVELS $ID_STRUC_HOVELS 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship  Legumes       Manpower_Output  1 1 1" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
+        <tr class="structure-card" data-search="Hovels Hovels will house the poorest part of the population, immediately adding +1 Population while using no building slot. They have a couple of drawbacks though: They can generate the Rats impediment (EVENT), and they reduce Siege Resistance. You can&#x27;t remove Hovels by yourself, except with a regional decision or with the Almshouse or equivalent. 503 ID_STRUC_HOVELS $ID_STRUC_HOVELS 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship  Legumes       Manpower_Output  1 1 1 Loyalty Penalty: 3" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
           <td><a href="0503-hovels.html">Hovels</a></td>
           <td>503</td>
           <td>1</td>
@@ -1513,7 +1549,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Huddled Shanties Shanties will house the poorest part of the population, immediately adding +1 Population while using no building slot. They have a couple drawbacks though: They can generate the Rats impediment (EVENT), and give a penalty to Health in the region. You can&#x27;t remove Shanties by yourself, except with a regional decision or with the Almshouse or equivalent. 504 ID_STRUC_HUDDLED_SHANTIES $ID_STRUC_HUDDLED_SHANTIES 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship  Legumes       Manpower_Output  1 1 1" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
+        <tr class="structure-card" data-search="Huddled Shanties Shanties will house the poorest part of the population, immediately adding +1 Population while using no building slot. They have a couple drawbacks though: They can generate the Rats impediment (EVENT), and give a penalty to Health in the region. You can&#x27;t remove Shanties by yourself, except with a regional decision or with the Almshouse or equivalent. 504 ID_STRUC_HUDDLED_SHANTIES $ID_STRUC_HUDDLED_SHANTIES 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship  Legumes       Manpower_Output  1 1 1 Health Penalty: 4%" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="1">
           <td><a href="0504-huddled-shanties.html">Huddled Shanties</a></td>
           <td>504</td>
           <td>1</td>
@@ -1529,7 +1565,7 @@ EVENT: In any case, this is what the local population desires and it will be def
 
         <tr class="structure-card" data-search="Slum Event Building.
 
- Slums can appear in regions with 9 or more population and a Health penalty. People will crowd into Shanties and Hovels as they have no other place to got. The only positive effects of Slums are that some of the poor can be enlisted in the army, and you&#x27;ll get more Black Market opportunities. Beyond that, slums will favor the appearance of epidemics. 550 ID_STRUC_EVT_SLUM $ID_STRUC_EVT_SLUM 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Manpower_Output Steward_Output  1 1 0" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="0">
+ Slums can appear in regions with 9 or more population and a Health penalty. People will crowd into Shanties and Hovels as they have no other place to got. The only positive effects of Slums are that some of the poor can be enlisted in the army, and you&#x27;ll get more Black Market opportunities. Beyond that, slums will favor the appearance of epidemics. 550 ID_STRUC_EVT_SLUM $ID_STRUC_EVT_SLUM 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Manpower_Output Steward_Output  1 1 0 Loyalty Penalty: 8" data-group="IMPED_BOON" data-chr="1" data-mus="1" data-tn="0">
           <td><a href="0550-slum.html">Slum</a></td>
           <td>550</td>
           <td>1</td>
@@ -1543,7 +1579,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Agrarian Chiefdom This minor chief, although not overly hostile, has grabbed the best lands in the region for himself. 586 ID_STRUC_IMP_AGRARIAN_CHIEFDOM $ID_STRUC_IMP_AGRARIAN_CHIEFDOM 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Food_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Agrarian Chiefdom This minor chief, although not overly hostile, has grabbed the best lands in the region for himself. 586 ID_STRUC_IMP_AGRARIAN_CHIEFDOM $ID_STRUC_IMP_AGRARIAN_CHIEFDOM 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Food_Output Steward_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0586-agrarian-chiefdom.html">Agrarian Chiefdom</a></td>
           <td>586</td>
           <td>1</td>
@@ -1557,7 +1593,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Petty Noble This minor noble, although not overly hostile, has grabbed the best lands in the region for himself. 611 ID_STRUC_IMP_PETTY_NOBLE $ID_STRUC_IMP_PETTY_NOBLE 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Food_Output Metal_Output Income_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Petty Noble This minor noble, although not overly hostile, has grabbed the best lands in the region for himself. 611 ID_STRUC_IMP_PETTY_NOBLE $ID_STRUC_IMP_PETTY_NOBLE 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Food_Output Metal_Output Income_Output Steward_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0611-petty-noble.html">Petty Noble</a></td>
           <td>611</td>
           <td>1</td>
@@ -1571,7 +1607,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Troglodyte Caverns The few local inhabitants live in caves to escape the severe heat. No outsider can find their way in those caverns. 663 ID_STRUC_IMP_TROGLODYTE_CAVERNS $ID_STRUC_IMP_TROGLODYTE_CAVERNS 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Food_Output Infra_Output Metal_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Troglodyte Caverns The few local inhabitants live in caves to escape the severe heat. No outsider can find their way in those caverns. 663 ID_STRUC_IMP_TROGLODYTE_CAVERNS $ID_STRUC_IMP_TROGLODYTE_CAVERNS 1 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Food_Output Infra_Output Metal_Output  0 0 0 " data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0663-troglodyte-caverns.html">Troglodyte Caverns</a></td>
           <td>663</td>
           <td>1</td>
@@ -1585,7 +1621,7 @@ EVENT: In any case, this is what the local population desires and it will be def
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rakshasa&#x27;s Curse Rakshasas, shapeshifting beings, are rumored to haunt village outskirts, leading the unwary into perilous traps by night. 731 ID_STRUC_IMP_RAKSHASA $ID_STRUC_IMP_RAKSHASA 2 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Piety_Output Steward_Output  0 0 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rakshasa&#x27;s Curse Rakshasas, shapeshifting beings, are rumored to haunt village outskirts, leading the unwary into perilous traps by night. 731 ID_STRUC_IMP_RAKSHASA $ID_STRUC_IMP_RAKSHASA 2 $POP_JOB_STEWARD Stewardship $JOB_KIND_STEWARD Stewardship         Piety_Output Steward_Output  0 0 0 Legacy Bonus: 1 Gs Revolt Increase: 2% Lobbyhidden: 0" data-group="IMPED_BOON" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0731-rakshasa-s-curse.html">Rakshasa&#x27;s Curse</a></td>
           <td>731</td>
           <td>2</td>

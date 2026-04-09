@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -131,7 +167,7 @@
           </thead>
           <tbody>
             
-        <tr class="structure-card" data-search="Waterfall A powerful waterfall allows extra productivity on the local farms. 598 ID_STRUC_IMP_WATERFALL $ID_STRUC_IMP_WATERFALL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Waterfall A powerful waterfall allows extra productivity on the local farms. 598 ID_STRUC_IMP_WATERFALL $ID_STRUC_IMP_WATERFALL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output Infra_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0598-waterfall.html">Waterfall</a></td>
           <td>598</td>
           <td>1</td>
@@ -145,7 +181,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Bountiful Land The land here is especially productive, thanks to a rich dark soil. 600 ID_STRUC_IMP_BOUNTIFUL_LAND $ID_STRUC_IMP_BOUNTIFUL_LAND 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Bountiful Land The land here is especially productive, thanks to a rich dark soil. 600 ID_STRUC_IMP_BOUNTIFUL_LAND $ID_STRUC_IMP_BOUNTIFUL_LAND 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0600-bountiful-land.html">Bountiful Land</a></td>
           <td>600</td>
           <td>1</td>
@@ -159,7 +195,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Rich Soil The rich soils in this region make the local farms fertile. 609 ID_STRUC_IMP_RICH_SOIL $ID_STRUC_IMP_RICH_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Rich Soil The rich soils in this region make the local farms fertile. 609 ID_STRUC_IMP_RICH_SOIL $ID_STRUC_IMP_RICH_SOIL 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Food Bonus: 10%" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0609-rich-soil.html">Rich Soil</a></td>
           <td>609</td>
           <td>1</td>
@@ -173,7 +209,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Games The lands in this region are rich in wild game, giving both sport and a ready source of food. 610 ID_STRUC_IMP_GAMES $ID_STRUC_IMP_GAMES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Games The lands in this region are rich in wild game, giving both sport and a ready source of food. 610 ID_STRUC_IMP_GAMES $ID_STRUC_IMP_GAMES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Food Bonus: 5% Health Bonus: 3%" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0610-games.html">Games</a></td>
           <td>610</td>
           <td>1</td>
@@ -187,7 +223,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Verdant Rolling Hills The local hills are well watered providing excellent grazing and farmland. 619 ID_STRUC_IMP_VERDANT_ROLLING_HILLS $ID_STRUC_IMP_VERDANT_ROLLING_HILLS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Verdant Rolling Hills The local hills are well watered providing excellent grazing and farmland. 619 ID_STRUC_IMP_VERDANT_ROLLING_HILLS $ID_STRUC_IMP_VERDANT_ROLLING_HILLS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0619-verdant-rolling-hills.html">Verdant Rolling Hills</a></td>
           <td>619</td>
           <td>1</td>
@@ -201,7 +237,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Water Source This region is blessed with plentiful local water that makes it easy to establish villages and irrigate farmlands. 629 ID_STRUC_IMP_WATER_SOURCE $ID_STRUC_IMP_WATER_SOURCE 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Water Source This region is blessed with plentiful local water that makes it easy to establish villages and irrigate farmlands. 629 ID_STRUC_IMP_WATER_SOURCE $ID_STRUC_IMP_WATER_SOURCE 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0629-water-source.html">Water Source</a></td>
           <td>629</td>
           <td>1</td>
@@ -215,7 +251,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Protected Valley Hidden behind a narrow pass, this region offers both security and excellent pastureland. 644 ID_STRUC_IMP_PROTECTED_VALLEY $ID_STRUC_IMP_PROTECTED_VALLEY 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Protected Valley Hidden behind a narrow pass, this region offers both security and excellent pastureland. 644 ID_STRUC_IMP_PROTECTED_VALLEY $ID_STRUC_IMP_PROTECTED_VALLEY 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Extra Supply: 10" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0644-protected-valley.html">Protected Valley</a></td>
           <td>644</td>
           <td>1</td>
@@ -229,7 +265,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Animal Herds The local grasslands support large herds of wild animals. 660 ID_STRUC_IMP_ANIMAL_HERDS $ID_STRUC_IMP_ANIMAL_HERDS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Animal Herds The local grasslands support large herds of wild animals. 660 ID_STRUC_IMP_ANIMAL_HERDS $ID_STRUC_IMP_ANIMAL_HERDS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Manpower Penalty: 10%" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0660-animal-herds.html">Animal Herds</a></td>
           <td>660</td>
           <td>1</td>
@@ -243,7 +279,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Grassland Patches Although much of this wider region is harsh, the local climate here is more favourable producing rich grazing lands. 661 ID_STRUC_IMP_GRASSLAND_PATCHES $ID_STRUC_IMP_GRASSLAND_PATCHES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Grassland Patches Although much of this wider region is harsh, the local climate here is more favourable producing rich grazing lands. 661 ID_STRUC_IMP_GRASSLAND_PATCHES $ID_STRUC_IMP_GRASSLAND_PATCHES 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0661-grassland-patches.html">Grassland Patches</a></td>
           <td>661</td>
           <td>1</td>
@@ -257,7 +293,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Cataract This region features a watercourse and even a cataract! 668 ID_STRUC_IMP_CATARACT $ID_STRUC_IMP_CATARACT 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Cataract This region features a watercourse and even a cataract! 668 ID_STRUC_IMP_CATARACT $ID_STRUC_IMP_CATARACT 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0668-cataract.html">Cataract</a></td>
           <td>668</td>
           <td>1</td>
@@ -271,7 +307,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Oasis The desert may be harsh but the many oases make trade and travel relatively easier. 669 ID_STRUC_IMP_OASIS $ID_STRUC_IMP_OASIS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Oasis The desert may be harsh but the many oases make trade and travel relatively easier. 669 ID_STRUC_IMP_OASIS $ID_STRUC_IMP_OASIS 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Hitsrecovery: 1" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0669-oasis.html">Oasis</a></td>
           <td>669</td>
           <td>1</td>
@@ -285,7 +321,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Migrating Wildlife This region often witnesses the migration of animals in large herds. 706 ID_STRUC_IMP_MIGRATING_WILDLIFE $ID_STRUC_IMP_MIGRATING_WILDLIFE 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Migrating Wildlife This region often witnesses the migration of animals in large herds. 706 ID_STRUC_IMP_MIGRATING_WILDLIFE $ID_STRUC_IMP_MIGRATING_WILDLIFE 1 $POP_JOB_AGRI Agriculture $JOB_KIND_AGRI Agricultural         Food_Output  0 0 0 Manpower Penalty: 10%" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0706-migrating-wildlife.html">Migrating Wildlife</a></td>
           <td>706</td>
           <td>1</td>
@@ -299,7 +335,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Mineral Vein This region is blessed with local riches that can be traded to nearby towns and cities. 620 ID_STRUC_IMP_MINERAL_VEIN $ID_STRUC_IMP_MINERAL_VEIN 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Metal_Output Income_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Mineral Vein This region is blessed with local riches that can be traded to nearby towns and cities. 620 ID_STRUC_IMP_MINERAL_VEIN $ID_STRUC_IMP_MINERAL_VEIN 1 $POP_JOB_COMMERCE Commerce $JOB_KIND_COMMERCE Commerce         Metal_Output Income_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0620-mineral-vein.html">Mineral Vein</a></td>
           <td>620</td>
           <td>1</td>
@@ -313,7 +349,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Hot Spring The local hot springs make life easy for the villagers and attract many visitors. 639 ID_STRUC_IMP_HOT_SPRING $ID_STRUC_IMP_HOT_SPRING 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Income_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Hot Spring The local hot springs make life easy for the villagers and attract many visitors. 639 ID_STRUC_IMP_HOT_SPRING $ID_STRUC_IMP_HOT_SPRING 1 $POP_JOB_INFRA Infrastructure $JOB_KIND_HEALTH Job Kind Health         Income_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0639-hot-spring.html">Hot Spring</a></td>
           <td>639</td>
           <td>1</td>
@@ -327,7 +363,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Paganism traces The population retains traces of paganism and worships local nature spirits. 599 ID_STRUC_IMP_SACRED_SITE $ID_STRUC_IMP_SACRED_SITE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Paganism traces The population retains traces of paganism and worships local nature spirits. 599 ID_STRUC_IMP_SACRED_SITE $ID_STRUC_IMP_SACRED_SITE 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0 " data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0599-paganism-traces.html">Paganism traces</a></td>
           <td>599</td>
           <td>1</td>
@@ -341,7 +377,7 @@
           <td>-</td>
         </tr>
 
-        <tr class="structure-card" data-search="Old Crone Hut Despite the marshes, local people have worked out how to live in this region and some elderly residents are skilled at healing and finding food. 653 ID_STRUC_IMP_OLDCRONE_HUT $ID_STRUC_IMP_OLDCRONE_HUT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
+        <tr class="structure-card" data-search="Old Crone Hut Despite the marshes, local people have worked out how to live in this region and some elderly residents are skilled at healing and finding food. 653 ID_STRUC_IMP_OLDCRONE_HUT $ID_STRUC_IMP_OLDCRONE_HUT 1 $POP_JOB_PIETY Piety $JOB_KIND_RELIGIOUS Job Kind Religious         Food_Output Piety_Output  0 0 0 Gs Revolt Increase: 1% Lobbyhidden: 0" data-group="PERK" data-chr="0" data-mus="0" data-tn="0">
           <td><a href="0653-old-crone-hut.html">Old Crone Hut</a></td>
           <td>653</td>
           <td>1</td>

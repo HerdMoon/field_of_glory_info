@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -209,6 +245,10 @@ Muslim hospitals, sometimes named Bimaristans, appeared as early as the VIIIth c
         <div>FT_MaxLevel</div><div>100</div>
         <div>FT_LevelChange</div><div>0</div>
       </div>
+    </div>
+    <div class="card">
+      <h2>Transverse outputs (from linked modifiers)</h2>
+      <p class="small"><span class='muted'>No transverse outputs decoded from linked modifiers.</span></p>
     </div>
     <div class="card">
       <h2>Manual references</h2>

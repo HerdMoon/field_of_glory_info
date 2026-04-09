@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -211,6 +247,10 @@ The Mosque is the place of worship for Muslim populations and is the successor b
       </div>
     </div>
     <div class="card">
+      <h2>Transverse outputs (from linked modifiers)</h2>
+      <p class="small">Transverse output: Gain 1.5 piety for any building under Piety category. Limit 18.<br>Transverse output: 4 piety to <a href="0410-ramadan-vigils.html">Ramadan Vigils</a></p>
+    </div>
+    <div class="card">
       <h2>Manual references</h2>
       <p class="small muted">Source: FOG_Kingdoms_Manual_Printer-Friendly.pdf</p>
       <ul class="small">
@@ -221,7 +261,7 @@ The Mosque is the place of worship for Muslim populations and is the successor b
       <h2>Modifiers</h2>
       <table class="small">
         <thead><tr><th>Name</th><th>Alias</th><th>Description</th><th>Effects (decoded)</th></tr></thead>
-        <tbody><tr><td>IDS_MOD_Name_Structure_Small_Mosque</td><td>ID_MOD_STRUCTURE_SMALL_MOSQUE</td><td>God&#x27;s Word</td><td class='small'>Struc Output Transverse: 18 (params: $TRANSVERSE_OUTPUT_STC1, $POP_JOB_PIETY, $POP_JOB_PIETY, 150, 150)<br>Convert Bonus: 10%</td></tr></tbody>
+        <tbody><tr><td>IDS_MOD_Name_Structure_Small_Mosque</td><td>ID_MOD_STRUCTURE_SMALL_MOSQUE</td><td>God&#x27;s Word</td><td class='small'>Transverse output: Gain 1.5 piety for any building under Piety category. Limit 18.<br>Convert Bonus: 10%</td></tr></tbody>
       </table>
     </div>
 

@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -127,10 +163,10 @@
     <div class="card">
       <h2>Structures using this resource</h2>
       <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
-      <h3>Mandatory regional resource</h3><ul class='small'><li><a href="0395-gunpowder-workshop.html">Gunpowder Workshop</a></li></ul>
-      <h3>Input (consumed)</h3><ul class='small'><li><a href="0133-lime-kiln.html">Lime Kiln</a></li></ul>
-      <h3>Output (produced)</h3><ul class='small'><li><a href="0079-charcoal-burner.html">Charcoal Burner</a> <span class="muted small">(Output_Resource)</span></li><li><a href="0270-emporium-depot-coal.html">Emporium Depot - Coal</a> <span class="muted small">(Output_Resource)</span></li></ul>
-      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0086-crude-smelter.html">Crude Smelter</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Metal 1</span></li><li><a href="0097-bloomery.html">Bloomery</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Metal 2, Bonus_Steward 2</span></li><li><a href="0107-early-furnace.html">Early Furnace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Metal 3, Bonus_Steward 2</span></li><li><a href="0786-corpse-burners.html">Corpse Burners</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 2, Bonus_Steward 2</span></li><li><a href="0791-shaft-furnace.html">Shaft Furnace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Metal 4</span></li><li><a href="0792-blast-furnace.html">Blast Furnace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3, Bonus_Metal 5</span></li><li><a href="0800-lazaretto.html">Lazaretto</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 4</span></li><li><a href="0501-inquisition-office.html">Inquisition Office</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 2</span></li><li><a href="0514-longhouses.html">Longhouses</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1, Bonus_Steward 1</span></li></ul>
+      <h3>Mandatory regional resource</h3><ul class='small'><li><a href="0395-gunpowder-workshop.html">Gunpowder Workshop</a><br><span class="small muted">This structure outputs: —</span></li></ul>
+      <h3>Input (consumed)</h3><ul class='small'><li><a href="0133-lime-kiln.html">Lime Kiln</a><br><span class="small muted">This structure outputs: —</span></li></ul>
+      <h3>Output (produced)</h3><ul class='small'><li><a href="0079-charcoal-burner.html">Charcoal Burner</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: input: Wood</span></li><li><a href="0270-emporium-depot-coal.html">Emporium Depot - Coal</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: —</span></li></ul>
+      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0086-crude-smelter.html">Crude Smelter</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Metal 1</span><br><span class="small muted">This structure inputs: input: Iron Ore · outputs: —</span></li><li><a href="0097-bloomery.html">Bloomery</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Metal 2, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: input: Iron Ore · outputs: —</span></li><li><a href="0107-early-furnace.html">Early Furnace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 1, Bonus_Metal 3, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: input: Iron Ore · outputs: —</span></li><li><a href="0786-corpse-burners.html">Corpse Burners</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 2, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0791-shaft-furnace.html">Shaft Furnace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 2, Bonus_Metal 4</span><br><span class="small muted">This structure inputs: input: Iron Ore · outputs: —</span></li><li><a href="0792-blast-furnace.html">Blast Furnace</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Infra 3, Bonus_Metal 5</span><br><span class="small muted">This structure inputs: input: Iron Ore · outputs: —</span></li><li><a href="0800-lazaretto.html">Lazaretto</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 4</span><br><span class="small muted">This structure inputs: input: Drugs &amp; Herbs · outputs: —</span></li><li><a href="0501-inquisition-office.html">Inquisition Office</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 2</span><br><span class="small muted">This structure inputs: input: Tools · outputs: —</span></li><li><a href="0514-longhouses.html">Longhouses</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 1, Bonus_Steward 1</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: —</span></li></ul>
     </div>
 
   </div>

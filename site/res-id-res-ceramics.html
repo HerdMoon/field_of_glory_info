@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -128,9 +164,9 @@
       <h2>Structures using this resource</h2>
       <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
       <h3>Mandatory regional resource</h3><p class='muted'>None</p>
-      <h3>Input (consumed)</h3><ul class='small'><li><a href="0147-leech-gatherer.html">Leech Gatherer</a></li><li><a href="0488-necropolis.html">Necropolis</a></li></ul>
-      <h3>Output (produced)</h3><ul class='small'><li><a href="0234-ceramics-workshop.html">Ceramics Workshop</a> <span class="muted small">(Output_Resource)</span></li></ul>
-      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0113-apothecary.html">Apothecary</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 6</span></li><li><a href="0722-amber-trader.html">Amber Trader</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Steward 2</span></li><li><a href="0441-walled-cemetery.html">Walled Cemetery</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 3, Bonus_Steward 2</span></li><li><a href="0542-elected-council.html">Elected Council</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 5</span></li></ul>
+      <h3>Input (consumed)</h3><ul class='small'><li><a href="0147-leech-gatherer.html">Leech Gatherer</a><br><span class="small muted">This structure outputs: —</span></li><li><a href="0488-necropolis.html">Necropolis</a><br><span class="small muted">This structure outputs: —</span></li></ul>
+      <h3>Output (produced)</h3><ul class='small'><li><a href="0234-ceramics-workshop.html">Ceramics Workshop</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: —</span></li></ul>
+      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0113-apothecary.html">Apothecary</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Income 6</span><br><span class="small muted">This structure inputs: input: Drugs &amp; Herbs · outputs: —</span></li><li><a href="0722-amber-trader.html">Amber Trader</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: — · outputs: Amber x 2</span></li><li><a href="0441-walled-cemetery.html">Walled Cemetery</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Piety 3, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0542-elected-council.html">Elected Council</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income 4, Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li></ul>
     </div>
 
   </div>

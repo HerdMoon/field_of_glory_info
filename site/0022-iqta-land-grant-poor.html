@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -209,6 +245,10 @@
       </div>
     </div>
     <div class="card">
+      <h2>Transverse outputs (from linked modifiers)</h2>
+      <p class="small">Transverse output: Gain 1.5 food for any building under Agriculture category. Limit 12.</p>
+    </div>
+    <div class="card">
       <h2>Manual references</h2>
       <p class="small muted">Source: FOG_Kingdoms_Manual_Printer-Friendly.pdf</p>
       <ul class="small">
@@ -219,7 +259,7 @@
       <h2>Modifiers</h2>
       <table class="small">
         <thead><tr><th>Name</th><th>Alias</th><th>Description</th><th>Effects (decoded)</th></tr></thead>
-        <tbody><tr><td>IDS_MOD_Name_Structure_MUS_Iqta_LandGrant2</td><td>ID_MOD_STRUCTURE_MUS_IQTA_LANDGRANT2</td><td>Poor Administration</td><td class='small'>Struc Output Transverse: 12 (params: $TRANSVERSE_OUTPUT_STC1, $POP_JOB_AGRI, $POP_JOB_AGRI, 150, 150)</td></tr></tbody>
+        <tbody><tr><td>IDS_MOD_Name_Structure_MUS_Iqta_LandGrant2</td><td>ID_MOD_STRUCTURE_MUS_IQTA_LANDGRANT2</td><td>Poor Administration</td><td class='small'>Transverse output: Gain 1.5 food for any building under Agriculture category. Limit 12.</td></tr></tbody>
       </table>
     </div>
 

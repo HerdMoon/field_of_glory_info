@@ -93,6 +93,42 @@
     .badge-perk { background: #15803d; }
     .mono { font-family: ui-monospace, Consolas, monospace; letter-spacing: 0.02em; }
     code { font-size: 0.95em; }
+    .chart-block h3 { margin: 0 0 10px 0; font-size: 15px; }
+    .chart-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 150px) 1fr 52px;
+      gap: 8px;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .chart-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+    .chart-track {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      height: 11px;
+      overflow: hidden;
+    }
+    .chart-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #60a5fa);
+      border-radius: 3px;
+      min-width: 2px;
+    }
+    .chart-fill.cost {
+      background: linear-gradient(90deg, #b45309, #fbbf24);
+    }
+    .chart-val { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .units-index-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 900px) {
+      .units-index-charts { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -210,6 +246,10 @@ A good Hostelry is one well supplied by local goods. Some practiced some form of
       </div>
     </div>
     <div class="card">
+      <h2>Transverse outputs (from linked modifiers)</h2>
+      <p class="small">Transverse output: 8 money from <a href="0232-fair.html">Fair</a></p>
+    </div>
+    <div class="card">
       <h2>Manual references</h2>
       <p class="small muted">Source: FOG_Kingdoms_Manual_Printer-Friendly.pdf</p>
       <ul class="small">
@@ -220,7 +260,7 @@ A good Hostelry is one well supplied by local goods. Some practiced some form of
       <h2>Modifiers</h2>
       <table class="small">
         <thead><tr><th>Name</th><th>Alias</th><th>Description</th><th>Effects (decoded)</th></tr></thead>
-        <tbody><tr><td>IDS_MOD_Name_Structure_Hostelry</td><td>ID_MOD_STRUCTURE_HOSTELRY</td><td>Rest for the weary ... for a price</td><td class='small'>Health Bonus: 5%<br>Struc Output Transverse: 8 (params: $TRANSVERSE_OUTPUT_STC2, $ID_STRUC_FAIR, $POP_JOB_COMMERCE)</td></tr></tbody>
+        <tbody><tr><td>IDS_MOD_Name_Structure_Hostelry</td><td>ID_MOD_STRUCTURE_HOSTELRY</td><td>Rest for the weary ... for a price</td><td class='small'>Health Bonus: 5%<br>Transverse output: 8 money from Fair</td></tr></tbody>
       </table>
     </div>
 
