@@ -23,6 +23,16 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    /* Resource page: structure links by job family (readable on --bg / --panel) */
+    a.struct-link { font-weight: 550; text-underline-offset: 2px; }
+    a.struct-link:hover { filter: brightness(1.12); }
+    a.struct-link.link-job-agri { color: #4ade80; text-shadow: 0 0 12px rgba(74, 222, 128, 0.25); }
+    a.struct-link.link-job-infra { color: #f472b6; text-shadow: 0 0 12px rgba(244, 114, 182, 0.22); }
+    a.struct-link.link-job-commerce { color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.35); }
+    a.struct-link.link-job-military { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.22); }
+    a.struct-link.link-job-piety { color: #fb923c; text-shadow: 0 0 12px rgba(251, 146, 60, 0.22); }
+    a.struct-link.link-job-steward { color: #7dd3fc; text-shadow: 0 0 12px rgba(125, 211, 252, 0.2); }
+    a.struct-link.link-job-default { color: var(--accent); text-shadow: none; }
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -72,6 +82,23 @@
       padding: 8px 6px;
       vertical-align: top;
     }
+    table.resource-usage-table th {
+      white-space: nowrap;
+    }
+    table.resource-usage-table td:first-child {
+      min-width: 11rem;
+    }
+    table.resource-usage-table td:last-child {
+      color: var(--muted);
+    }
+    table.resource-usage-table td:last-child a.resource-inline-link {
+      color: #7dd3fc;
+      font-weight: 500;
+    }
+    table.resource-usage-table td:last-child a.resource-inline-link:hover {
+      text-decoration: underline;
+      filter: brightness(1.1);
+    }
     .small { font-size: 13px; }
     .wiki-nav { margin-bottom: 12px; font-size: 15px; }
     .jump-index { margin-bottom: 14px; line-height: 1.8; }
@@ -88,6 +115,39 @@
       font-weight: 700;
       border-left: 3px solid #3b82f6;
       padding-left: 10px;
+    }
+    /* Agriculture buildings index — gate tier colors on structure link only */
+    a.agri-link-u1 { color: #d9f99d; font-weight: 500; }
+    a.agri-link-g1 { color: #bef264; font-weight: 500; }
+    a.agri-link-n1 { color: #a3e635; font-weight: 500; }
+    a.agri-link-g2 { color: #84cc16; font-weight: 550; }
+    a.agri-link-n2 { color: #65a30d; font-weight: 550; }
+    a.agri-link-u1:hover, a.agri-link-g1:hover, a.agri-link-n1:hover,
+    a.agri-link-g2:hover, a.agri-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
+    }
+    /* Commerce buildings index — yellow gate tier colors on structure link only */
+    a.comm-link-u1 { color: #fef9c3; font-weight: 500; }
+    a.comm-link-g1 { color: #fef08a; font-weight: 500; }
+    a.comm-link-n1 { color: #fde047; font-weight: 500; }
+    a.comm-link-g2 { color: #facc15; font-weight: 550; }
+    a.comm-link-n2 { color: #eab308; font-weight: 550; }
+    a.comm-link-u1:hover, a.comm-link-g1:hover, a.comm-link-n1:hover,
+    a.comm-link-g2:hover, a.comm-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
+    }
+    /* Infrastructure buildings index — red gate tier colors on structure link only */
+    a.infra-link-u1 { color: #fee2e2; font-weight: 500; }
+    a.infra-link-g1 { color: #fecaca; font-weight: 500; }
+    a.infra-link-n1 { color: #fca5a5; font-weight: 500; }
+    a.infra-link-g2 { color: #f87171; font-weight: 550; }
+    a.infra-link-n2 { color: #ef4444; font-weight: 550; }
+    a.infra-link-u1:hover, a.infra-link-g1:hover, a.infra-link-n1:hover,
+    a.infra-link-g2:hover, a.infra-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
     }
     .badge-imped { background: #b45309; }
     .badge-perk { background: #15803d; }
@@ -156,7 +216,7 @@
       <p id="counter" class="small muted"></p>
     </div>
     <section class="job-group card" data-group="UNITS">
-      <h2>Unit list <span class="small muted">(459)</span></h2>
+      <h2>Unit list <span class="small muted">(432)</span></h2>
       <table class="small">
         <thead>
           <tr><th>Unit</th><th>ID</th><th>Family</th><th>Garrison category</th><th title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">Combat power</th><th>Required structures</th></tr>
@@ -621,63 +681,9 @@
           <td class="small"><span class='muted'>—</span></td>
         </tr>
 
-        <tr class="structure-card" data-search="255 Reserved for Future Use ID_UNI_TEMP255 IDS_UNI_NAME_TEMP255, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP255 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
-          <td><a href="unit-0255-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>255</td>
-          <td>$famCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
         <tr class="structure-card" data-search="257 Indian Lancers ID_UNI_INDIAN_LANCERS1 IDS_UNI_NAME_INDIAN_LANCERS1, &quot;Indian Lancers&quot;, Indian Lancers IDS_UNI_NAME_INDIAN_LANCERS1 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
           <td><a href="unit-0257-indian-lancers.html">Indian Lancers</a></td>
           <td>257</td>
-          <td>$famCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="260 Reserved for Future Use ID_UNI_TEMP260 IDS_UNI_NAME_TEMP260, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP260 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
-          <td><a href="unit-0260-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>260</td>
-          <td>$famCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="268 Reserved for Future Use ID_UNI_TEMP268 IDS_UNI_NAME_TEMP268, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP268 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
-          <td><a href="unit-0268-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>268</td>
-          <td>$famCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="273 Reserved for Future Use ID_UNI_TEMPAMK273 IDS_UNI_NAME_TEMPAMK273, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK273 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
-          <td><a href="unit-0273-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>273</td>
-          <td>$famCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="274 Reserved for Future Use ID_UNI_TEMPAMK274 IDS_UNI_NAME_TEMPAMK274, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK274 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
-          <td><a href="unit-0274-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>274</td>
-          <td>$famCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="275 Reserved for Future Use ID_UNI_TEMPAMK275 IDS_UNI_NAME_TEMPAMK275, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK275 $famCavalry 0 -1  21.5 21.50" data-group="UNITS">
-          <td><a href="unit-0275-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>275</td>
           <td>$famCavalry</td>
           <td>0</td>
           <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.5</td>
@@ -1053,24 +1059,6 @@
           <td class="small"><a href="0366-siege-workshop.html">Siege Workshop</a></td>
         </tr>
 
-        <tr class="structure-card" data-search="342 Reserved for Future Use ID_UNI_TEMPAMK342 IDS_UNI_NAME_TEMPAMK342, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK342 $famHvyBeast 0 $ID_STRUC_RUDIMENTARY_FORT|$ID_STRUC_TN_PALISADED_VILLAGE|$ID_STRUC_RINGWORK_CASTLE|$ID_STRUC_HILLFORT Rudimentary Fort Palisaded Village Rustic Ringwork Castle Rustic Hill Fort 34.0 34.00" data-group="UNITS">
-          <td><a href="unit-0342-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>342</td>
-          <td>$famHvyBeast</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">34.0</td>
-          <td class="small"><a href="0323-rudimentary-fort.html">Rudimentary Fort</a>, <a href="0324-palisaded-village.html">Palisaded Village</a>, <a href="0325-rustic-ringwork-castle.html">Rustic Ringwork Castle</a>, <a href="0326-rustic-hill-fort.html">Rustic Hill Fort</a></td>
-        </tr>
-
-        <tr class="structure-card" data-search="343 Reserved for Future Use ID_UNI_TEMPAMK343 IDS_UNI_NAME_TEMPAMK343, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK343 $famHvyBeast 0 $ID_STRUC_RUDIMENTARY_FORT|$ID_STRUC_TN_PALISADED_VILLAGE|$ID_STRUC_RINGWORK_CASTLE|$ID_STRUC_HILLFORT Rudimentary Fort Palisaded Village Rustic Ringwork Castle Rustic Hill Fort 34.0 34.00" data-group="UNITS">
-          <td><a href="unit-0343-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>343</td>
-          <td>$famHvyBeast</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">34.0</td>
-          <td class="small"><a href="0323-rudimentary-fort.html">Rudimentary Fort</a>, <a href="0324-palisaded-village.html">Palisaded Village</a>, <a href="0325-rustic-ringwork-castle.html">Rustic Ringwork Castle</a>, <a href="0326-rustic-hill-fort.html">Rustic Hill Fort</a></td>
-        </tr>
-
         <tr class="structure-card" data-search="335 War Wagons ID_UNI_WAR_WAGONS0 IDS_UNI_NAME_WAR_WAGONS0, &quot;War Wagons&quot;, War Wagons IDS_UNI_NAME_WAR_WAGONS0 $famHvyBeast 0 $ID_STRUC_SIEGE_WORKSHOP Siege Workshop 38.0 38.00" data-group="UNITS">
           <td><a href="unit-0335-war-wagons.html">War Wagons</a></td>
           <td>335</td>
@@ -1105,15 +1093,6 @@
           <td>0</td>
           <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">43.0</td>
           <td class="small"><a href="0366-siege-workshop.html">Siege Workshop</a></td>
-        </tr>
-
-        <tr class="structure-card" data-search="332 Reserved for Future Use ID_UNI_TEMPAMK332 IDS_UNI_NAME_TEMPAMK332, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK332 $famHvyCavalry 0 $ID_STRUC_RUDIMENTARY_FORT|$ID_STRUC_TN_PALISADED_VILLAGE|$ID_STRUC_RINGWORK_CASTLE|$ID_STRUC_HILLFORT Rudimentary Fort Palisaded Village Rustic Ringwork Castle Rustic Hill Fort 30.0 30.00" data-group="UNITS">
-          <td><a href="unit-0332-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>332</td>
-          <td>$famHvyCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">30.0</td>
-          <td class="small"><a href="0323-rudimentary-fort.html">Rudimentary Fort</a>, <a href="0324-palisaded-village.html">Palisaded Village</a>, <a href="0325-rustic-ringwork-castle.html">Rustic Ringwork Castle</a>, <a href="0326-rustic-hill-fort.html">Rustic Hill Fort</a></td>
         </tr>
 
         <tr class="structure-card" data-search="318 Armoured Lancers ID_UNI_ARM_LANCERS IDS_UNI_NAME_ARM_LANCERS, &quot;Armoured Lancers&quot;, Armoured Lancers IDS_UNI_NAME_ARM_LANCERS $famHvyCavalry 0 $ID_STRUC_RUDIMENTARY_FORT|$ID_STRUC_TN_PALISADED_VILLAGE|$ID_STRUC_RINGWORK_CASTLE|$ID_STRUC_HILLFORT Rudimentary Fort Palisaded Village Rustic Ringwork Castle Rustic Hill Fort 31.0 31.00" data-group="UNITS">
@@ -1887,15 +1866,6 @@
           <td>$famHvyInfantry</td>
           <td>$GAR_HEAVY</td>
           <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">33.0</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="129 Reserved for Future Use ID_UNI_TEMP129 IDS_UNI_NAME_TEMP129, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP129 $famHvyInfantry $GAR_HEAVY -1  33.5 33.50" data-group="UNITS">
-          <td><a href="unit-0129-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>129</td>
-          <td>$famHvyInfantry</td>
-          <td>$GAR_HEAVY</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">33.5</td>
           <td class="small"><span class='muted'>—</span></td>
         </tr>
 
@@ -3024,15 +2994,6 @@
           <td class="small"><span class='muted'>—</span></td>
         </tr>
 
-        <tr class="structure-card" data-search="59 Reserved for Future Use ID_UNI_TEMP59 IDS_UNI_NAME_TEMP59, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP59 $famInfantry $GAR_MEDIUM -1  25.5 25.50" data-group="UNITS">
-          <td><a href="unit-0059-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>59</td>
-          <td>$famInfantry</td>
-          <td>$GAR_MEDIUM</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">25.5</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
         <tr class="structure-card" data-search="402 Standard Wagon ID_UNI_CARROCCIO IDS_UNI_NAME_CARROCCIO, &quot;Standard Wagon&quot;, Standard Wagon IDS_UNI_NAME_CARROCCIO $famInfantry $GAR_MEDIUM -1  26.0 26.00" data-group="UNITS">
           <td><a href="unit-0402-standard-wagon.html">Standard Wagon</a></td>
           <td>402</td>
@@ -3285,33 +3246,6 @@
           <td class="small"><span class='muted'>—</span></td>
         </tr>
 
-        <tr class="structure-card" data-search="225 Reserved for Future Use ID_UNI_TEMPAMK225 IDS_UNI_NAME_TEMPAMK225, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK225 $famLtCavalry 0 -1  20.8 20.75" data-group="UNITS">
-          <td><a href="unit-0225-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>225</td>
-          <td>$famLtCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">20.8</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="226 Reserved for Future Use ID_UNI_TEMPAMK226 IDS_UNI_NAME_TEMPAMK226, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK226 $famLtCavalry 0 -1  20.8 20.75" data-group="UNITS">
-          <td><a href="unit-0226-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>226</td>
-          <td>$famLtCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">20.8</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="227 Reserved for Future Use ID_UNI_TEMPAMK227 IDS_UNI_NAME_TEMPAMK227, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK227 $famLtCavalry 0 -1  20.8 20.75" data-group="UNITS">
-          <td><a href="unit-0227-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>227</td>
-          <td>$famLtCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">20.8</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
         <tr class="structure-card" data-search="216 Indian Light Horse ID_UNI_IND_LHORSE_JAV IDS_UNI_NAME_IND_LHORSE_JAV, &quot;Indian Light Horse&quot;, Indian Light Horse IDS_UNI_NAME_IND_LHORSE_JAV $famLtCavalry 0 -1  21.8 21.75" data-group="UNITS">
           <td><a href="unit-0216-indian-light-horse.html">Indian Light Horse</a></td>
           <td>216</td>
@@ -3501,33 +3435,6 @@
           <td class="small"><span class='muted'>—</span></td>
         </tr>
 
-        <tr class="structure-card" data-search="410 Reserved for Future Use ID_UNI_TEMPAMK410 IDS_UNI_NAME_TEMPAMK410, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK410 $famSiege $GAR_SIEGE -1  34.2 34.25" data-group="UNITS">
-          <td><a href="unit-0410-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>410</td>
-          <td>$famSiege</td>
-          <td>$GAR_SIEGE</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">34.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="411 Reserved for Future Use ID_UNI_TEMPAMK411 IDS_UNI_NAME_TEMPAMK411, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK411 $famSiege $GAR_SIEGE -1  34.2 34.25" data-group="UNITS">
-          <td><a href="unit-0411-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>411</td>
-          <td>$famSiege</td>
-          <td>$GAR_SIEGE</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">34.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="412 Reserved for Future Use ID_UNI_TEMPAMK412 IDS_UNI_NAME_TEMPAMK412, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK412 $famSiege $GAR_SIEGE -1  34.2 34.25" data-group="UNITS">
-          <td><a href="unit-0412-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>412</td>
-          <td>$famSiege</td>
-          <td>$GAR_SIEGE</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">34.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
         <tr class="structure-card" data-search="400 Culverins ID_UNI_LT_GUNS IDS_UNI_NAME_LT_GUNS, &quot;Culverins&quot;, Culverins IDS_UNI_NAME_LT_GUNS $famSiege $GAR_SIEGE -1  38.8 38.75" data-group="UNITS">
           <td><a href="unit-0400-culverins.html">Culverins</a></td>
           <td>400</td>
@@ -3621,15 +3528,6 @@
         <tr class="structure-card" data-search="6 African Light Javelinmen ID_UNI_AFR_JAVELINS IDS_UNI_NAME_AFR_JAVELINS, &quot;African Light Javelinmen&quot;, African Light Javelinmen IDS_UNI_NAME_AFR_JAVELINS $famSkirmisher $GAR_LIGHT -1  25.2 25.25" data-group="UNITS">
           <td><a href="unit-0006-african-light-javelinmen.html">African Light Javelinmen</a></td>
           <td>6</td>
-          <td>$famSkirmisher</td>
-          <td>$GAR_LIGHT</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">25.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="19 Reserved for Future Use ID_UNI_TEMP19 IDS_UNI_NAME_TEMP19, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP19 $famSkirmisher $GAR_LIGHT -1  25.2 25.25" data-group="UNITS">
-          <td><a href="unit-0019-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>19</td>
           <td>$famSkirmisher</td>
           <td>$GAR_LIGHT</td>
           <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">25.2</td>
@@ -3915,33 +3813,6 @@
           <td class="small"><span class='muted'>—</span></td>
         </tr>
 
-        <tr class="structure-card" data-search="183 Reserved for Future Use ID_UNI_TEMP183 IDS_UNI_NAME_TEMP183, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP183 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0183-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>183</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="184 Reserved for Future Use ID_UNI_TEMP184 IDS_UNI_NAME_TEMP184, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP184 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0184-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>184</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="185 Reserved for Future Use ID_UNI_TEMP185 IDS_UNI_NAME_TEMP185, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP185 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0185-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>185</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
         <tr class="structure-card" data-search="186 Irish Light Horse ID_UNI_IRI_LHORSE_JAV IDS_UNI_NAME_IRI_LHORSE_JAV, &quot;Irish Light Horse&quot;, Irish Light Horse IDS_UNI_NAME_IRI_LHORSE_JAV $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
           <td><a href="unit-0186-irish-light-horse.html">Irish Light Horse</a></td>
           <td>186</td>
@@ -3972,60 +3843,6 @@
         <tr class="structure-card" data-search="191 Muslim Light Horse (Javelins) ID_UNI_MUSL_LHORSE_JAV IDS_UNI_NAME_MUSL_LHORSE_JAV, &quot;Muslim Light Horse (Javelins)&quot;, Muslim Light Horse (Javelins) IDS_UNI_NAME_MUSL_LHORSE_JAV $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
           <td><a href="unit-0191-muslim-light-horse-javelins.html">Muslim Light Horse (Javelins)</a></td>
           <td>191</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="192 Reserved for Future Use ID_UNI_TEMP192 IDS_UNI_NAME_TEMP192, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP192 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0192-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>192</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="199 Reserved for Future Use ID_UNI_TEMP199 IDS_UNI_NAME_TEMP199, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP199 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0199-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>199</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="202 Reserved for Future Use ID_UNI_TEMP202 IDS_UNI_NAME_TEMP202, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMP202 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0202-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>202</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="206 Reserved for Future Use ID_UNI_TEMPAMK206 IDS_UNI_NAME_TEMPAMK206, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK206 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0206-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>206</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="207 Reserved for Future Use ID_UNI_TEMPAMK207 IDS_UNI_NAME_TEMPAMK207, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK207 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0207-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>207</td>
-          <td>$famSkirmisherCavalry</td>
-          <td>0</td>
-          <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>
-          <td class="small"><span class='muted'>—</span></td>
-        </tr>
-
-        <tr class="structure-card" data-search="208 Reserved for Future Use ID_UNI_TEMPAMK208 IDS_UNI_NAME_TEMPAMK208, &quot;Reserved for Future Use&quot;, Reserved for Future Use IDS_UNI_NAME_TEMPAMK208 $famSkirmisherCavalry 0 -1  21.2 21.25" data-group="UNITS">
-          <td><a href="unit-0208-reserved-for-future-use.html">Reserved for Future Use</a></td>
-          <td>208</td>
           <td>$famSkirmisherCavalry</td>
           <td>0</td>
           <td class="mono" title="Combat power (weak→strong within same Family and Garrison): 2×Hits + Effectiveness + Attack + Defense + Siege + SiegeResist + RangedAttack + RangedDefense + RangedMaxDamages + AttackingRange + ½×(FlankingModifier + AtkAssaultChg + DefAssaultChg) + ¼×IsSupport">21.2</td>

@@ -23,6 +23,16 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    /* Resource page: structure links by job family (readable on --bg / --panel) */
+    a.struct-link { font-weight: 550; text-underline-offset: 2px; }
+    a.struct-link:hover { filter: brightness(1.12); }
+    a.struct-link.link-job-agri { color: #4ade80; text-shadow: 0 0 12px rgba(74, 222, 128, 0.25); }
+    a.struct-link.link-job-infra { color: #f472b6; text-shadow: 0 0 12px rgba(244, 114, 182, 0.22); }
+    a.struct-link.link-job-commerce { color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.35); }
+    a.struct-link.link-job-military { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.22); }
+    a.struct-link.link-job-piety { color: #fb923c; text-shadow: 0 0 12px rgba(251, 146, 60, 0.22); }
+    a.struct-link.link-job-steward { color: #7dd3fc; text-shadow: 0 0 12px rgba(125, 211, 252, 0.2); }
+    a.struct-link.link-job-default { color: var(--accent); text-shadow: none; }
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -72,6 +82,23 @@
       padding: 8px 6px;
       vertical-align: top;
     }
+    table.resource-usage-table th {
+      white-space: nowrap;
+    }
+    table.resource-usage-table td:first-child {
+      min-width: 11rem;
+    }
+    table.resource-usage-table td:last-child {
+      color: var(--muted);
+    }
+    table.resource-usage-table td:last-child a.resource-inline-link {
+      color: #7dd3fc;
+      font-weight: 500;
+    }
+    table.resource-usage-table td:last-child a.resource-inline-link:hover {
+      text-decoration: underline;
+      filter: brightness(1.1);
+    }
     .small { font-size: 13px; }
     .wiki-nav { margin-bottom: 12px; font-size: 15px; }
     .jump-index { margin-bottom: 14px; line-height: 1.8; }
@@ -88,6 +115,39 @@
       font-weight: 700;
       border-left: 3px solid #3b82f6;
       padding-left: 10px;
+    }
+    /* Agriculture buildings index — gate tier colors on structure link only */
+    a.agri-link-u1 { color: #d9f99d; font-weight: 500; }
+    a.agri-link-g1 { color: #bef264; font-weight: 500; }
+    a.agri-link-n1 { color: #a3e635; font-weight: 500; }
+    a.agri-link-g2 { color: #84cc16; font-weight: 550; }
+    a.agri-link-n2 { color: #65a30d; font-weight: 550; }
+    a.agri-link-u1:hover, a.agri-link-g1:hover, a.agri-link-n1:hover,
+    a.agri-link-g2:hover, a.agri-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
+    }
+    /* Commerce buildings index — yellow gate tier colors on structure link only */
+    a.comm-link-u1 { color: #fef9c3; font-weight: 500; }
+    a.comm-link-g1 { color: #fef08a; font-weight: 500; }
+    a.comm-link-n1 { color: #fde047; font-weight: 500; }
+    a.comm-link-g2 { color: #facc15; font-weight: 550; }
+    a.comm-link-n2 { color: #eab308; font-weight: 550; }
+    a.comm-link-u1:hover, a.comm-link-g1:hover, a.comm-link-n1:hover,
+    a.comm-link-g2:hover, a.comm-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
+    }
+    /* Infrastructure buildings index — red gate tier colors on structure link only */
+    a.infra-link-u1 { color: #fee2e2; font-weight: 500; }
+    a.infra-link-g1 { color: #fecaca; font-weight: 500; }
+    a.infra-link-n1 { color: #fca5a5; font-weight: 500; }
+    a.infra-link-g2 { color: #f87171; font-weight: 550; }
+    a.infra-link-n2 { color: #ef4444; font-weight: 550; }
+    a.infra-link-u1:hover, a.infra-link-g1:hover, a.infra-link-n1:hover,
+    a.infra-link-g2:hover, a.infra-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
     }
     .badge-imped { background: #b45309; }
     .badge-perk { background: #15803d; }
@@ -162,11 +222,23 @@
     </div>
     <div class="card">
       <h2>Structures using this resource</h2>
-      <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
+      <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Resource names in Details link to resource pages when they match RESOURCES.CSV display names.</p>
       <h3>Mandatory regional resource</h3><p class='muted'>None</p>
-      <h3>Input (consumed)</h3><ul class='small'><li><a href="0387-concentric-castle.html">Concentric Castle</a><br><span class="small muted">This structure outputs: —</span></li><li><a href="0388-large-concentric-castle.html">Large Concentric Castle</a><br><span class="small muted">This structure outputs: —</span></li></ul>
-      <h3>Output (produced)</h3><ul class='small'><li><a href="0344-armor-smith.html">Armor Smith</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: input: Iron Ore</span></li></ul>
-      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0304-barracks.html">Barracks</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0305-tournament-ground.html">Tournament Ground</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3, Bonus_Steward 3</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0673-baronial-burgh.html">Baronial Burgh</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2</span><br><span class="small muted">This structure inputs: input: Iron Ore · outputs: —</span></li><li><a href="0385-jousting-field.html">Jousting Field</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0719-underground-fortress.html">Underground Fortress</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3, Bonus_Steward 3</span><br><span class="small muted">This structure inputs: input: Preserved Food · outputs: —</span></li><li><a href="0390-minor-garrison.html">Minor Garrison</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3, Bonus_Steward 3</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0391-major-garrison.html">Major Garrison</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 5, Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0393-theodosian-walls.html">Theodosian Walls</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 10, Bonus_Manpower 5</span><br><span class="small muted">This structure inputs: input: Stone · outputs: —</span></li><li><a href="0398-permanent-company-quarters.html">Permanent Company Quarters</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0823-muster-hall.html">Muster Hall</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 2</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0452-iberian-orders-commandery.html">Iberian Orders - Commandery</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Manpower 1, Bonus_Piety 2</span><br><span class="small muted">This structure inputs: — · outputs: Religious Craftsmanship x 1</span></li><li><a href="0453-hospitaller-knights-preceptory.html">Hospitaller Knights - Preceptory</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Manpower 1, Bonus_Piety 3</span><br><span class="small muted">This structure inputs: — · outputs: Religious Craftsmanship x 1</span></li><li><a href="0454-teutonic-knights-commandery.html">Teutonic Knights - Commandery</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3, Bonus_Manpower 1, Bonus_Piety 2</span><br><span class="small muted">This structure inputs: — · outputs: Religious Craftsmanship x 1</span></li><li><a href="0455-sword-brethen-commandery.html">Sword Brethen - Commandery</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 1, Bonus_Manpower 2, Bonus_Piety 2</span><br><span class="small muted">This structure inputs: — · outputs: Religious Craftsmanship x 1</span></li><li><a href="0456-knights-templar-preceptory.html">Knights Templar - Preceptory</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Manpower 1, Bonus_Piety 3</span><br><span class="small muted">This structure inputs: — · outputs: Religious Craftsmanship x 1</span></li><li><a href="0463-grave-robbers.html">Grave Robbers</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Income 2, Bonus_Metal 1, Bonus_Steward -3</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0675-royal-burgh.html">Royal Burgh</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Income -2, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: —</span></li><li><a href="0539-modest-palace.html">Modest Palace</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0540-king-s-residence.html">King&#x27;s Residence</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4, Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0541-noble-s-residence.html">Noble&#x27;s Residence</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 4, Bonus_Steward 4</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0855-shurta-barracks.html">Shurta Barracks</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Steward 5</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li></ul>
+      <h3>Input (consumed)</h3>
+      <table class="small resource-usage-table">
+        <thead><tr><th>Structure</th><th>Details</th></tr></thead>
+        <tbody><tr><td><a class="struct-link link-job-military" href="0387-concentric-castle.html">Concentric Castle</a></td><td><span class="small">This structure outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0388-large-concentric-castle.html">Large Concentric Castle</a></td><td><span class="small">This structure outputs: —</span></td></tr></tbody>
+      </table>
+      <h3>Output (produced)</h3>
+      <table class="small resource-usage-table">
+        <thead><tr><th>Structure</th><th>Output field</th><th>Details</th></tr></thead>
+        <tbody><tr><td><a class="struct-link link-job-military" href="0344-armor-smith.html">Armor Smith</a></td><td><span class="small">Output_Resource</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-iron.html">Iron Ore</a></span></td></tr></tbody>
+      </table>
+      <h3>Bonus resource</h3>
+      <table class="small resource-usage-table">
+        <thead><tr><th>Structure</th><th>Bonus outputs</th><th>Details</th></tr></thead>
+        <tbody><tr><td><a class="struct-link link-job-military" href="0304-barracks.html">Barracks</a></td><td><span class="small">MBP 3</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0305-tournament-ground.html">Tournament Ground</a></td><td><span class="small">MBP 3, Steward 3</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0673-baronial-burgh.html">Baronial Burgh</a></td><td><span class="small">MBP 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-iron.html">Iron Ore</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0385-jousting-field.html">Jousting Field</a></td><td><span class="small">MBP 4</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0719-underground-fortress.html">Underground Fortress</a></td><td><span class="small">MBP 3, Steward 3</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0390-minor-garrison.html">Minor Garrison</a></td><td><span class="small">MBP 3, Steward 3</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0391-major-garrison.html">Major Garrison</a></td><td><span class="small">MBP 5, Steward 5</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0393-theodosian-walls.html">Theodosian Walls</a></td><td><span class="small">MBP 10, Manpower 5</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-stone.html">Stone</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0398-permanent-company-quarters.html">Permanent Company Quarters</a></td><td><span class="small">MBP 3</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0823-muster-hall.html">Muster Hall</a></td><td><span class="small">Manpower 2</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0452-iberian-orders-commandery.html">Iberian Orders - Commandery</a></td><td><span class="small">MBP 2, Manpower 1, Piety 2</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-religiouswork.html">Religious Craftsmanship</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0453-hospitaller-knights-preceptory.html">Hospitaller Knights - Preceptory</a></td><td><span class="small">MBP 2, Manpower 1, Piety 3</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-religiouswork.html">Religious Craftsmanship</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0454-teutonic-knights-commandery.html">Teutonic Knights - Commandery</a></td><td><span class="small">MBP 3, Manpower 1, Piety 2</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-religiouswork.html">Religious Craftsmanship</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0455-sword-brethen-commandery.html">Sword Brethen - Commandery</a></td><td><span class="small">MBP 1, Manpower 2, Piety 2</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-religiouswork.html">Religious Craftsmanship</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0456-knights-templar-preceptory.html">Knights Templar - Preceptory</a></td><td><span class="small">MBP 2, Manpower 1, Piety 3</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-religiouswork.html">Religious Craftsmanship</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0463-grave-robbers.html">Grave Robbers</a></td><td><span class="small">MBP 2, Income 2, Metal 1, Steward -3</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0675-royal-burgh.html">Royal Burgh</a></td><td><span class="small">Income -2, Steward 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0539-modest-palace.html">Modest Palace</a></td><td><span class="small">MBP 2, Steward 5</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0540-king-s-residence.html">King&#x27;s Residence</a></td><td><span class="small">MBP 4, Steward 5</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0541-noble-s-residence.html">Noble&#x27;s Residence</a></td><td><span class="small">MBP 4, Steward 4</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0855-shurta-barracks.html">Shurta Barracks</a></td><td><span class="small">Steward 5</span></td><td><span class="small">— · outputs: —</span></td></tr></tbody>
+      </table>
     </div>
 
   </div>

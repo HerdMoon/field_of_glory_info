@@ -23,6 +23,16 @@
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    /* Resource page: structure links by job family (readable on --bg / --panel) */
+    a.struct-link { font-weight: 550; text-underline-offset: 2px; }
+    a.struct-link:hover { filter: brightness(1.12); }
+    a.struct-link.link-job-agri { color: #4ade80; text-shadow: 0 0 12px rgba(74, 222, 128, 0.25); }
+    a.struct-link.link-job-infra { color: #f472b6; text-shadow: 0 0 12px rgba(244, 114, 182, 0.22); }
+    a.struct-link.link-job-commerce { color: #fbbf24; text-shadow: 0 0 10px rgba(251, 191, 36, 0.35); }
+    a.struct-link.link-job-military { color: #f87171; text-shadow: 0 0 12px rgba(248, 113, 113, 0.22); }
+    a.struct-link.link-job-piety { color: #fb923c; text-shadow: 0 0 12px rgba(251, 146, 60, 0.22); }
+    a.struct-link.link-job-steward { color: #7dd3fc; text-shadow: 0 0 12px rgba(125, 211, 252, 0.2); }
+    a.struct-link.link-job-default { color: var(--accent); text-shadow: none; }
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -72,6 +82,23 @@
       padding: 8px 6px;
       vertical-align: top;
     }
+    table.resource-usage-table th {
+      white-space: nowrap;
+    }
+    table.resource-usage-table td:first-child {
+      min-width: 11rem;
+    }
+    table.resource-usage-table td:last-child {
+      color: var(--muted);
+    }
+    table.resource-usage-table td:last-child a.resource-inline-link {
+      color: #7dd3fc;
+      font-weight: 500;
+    }
+    table.resource-usage-table td:last-child a.resource-inline-link:hover {
+      text-decoration: underline;
+      filter: brightness(1.1);
+    }
     .small { font-size: 13px; }
     .wiki-nav { margin-bottom: 12px; font-size: 15px; }
     .jump-index { margin-bottom: 14px; line-height: 1.8; }
@@ -88,6 +115,39 @@
       font-weight: 700;
       border-left: 3px solid #3b82f6;
       padding-left: 10px;
+    }
+    /* Agriculture buildings index — gate tier colors on structure link only */
+    a.agri-link-u1 { color: #d9f99d; font-weight: 500; }
+    a.agri-link-g1 { color: #bef264; font-weight: 500; }
+    a.agri-link-n1 { color: #a3e635; font-weight: 500; }
+    a.agri-link-g2 { color: #84cc16; font-weight: 550; }
+    a.agri-link-n2 { color: #65a30d; font-weight: 550; }
+    a.agri-link-u1:hover, a.agri-link-g1:hover, a.agri-link-n1:hover,
+    a.agri-link-g2:hover, a.agri-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
+    }
+    /* Commerce buildings index — yellow gate tier colors on structure link only */
+    a.comm-link-u1 { color: #fef9c3; font-weight: 500; }
+    a.comm-link-g1 { color: #fef08a; font-weight: 500; }
+    a.comm-link-n1 { color: #fde047; font-weight: 500; }
+    a.comm-link-g2 { color: #facc15; font-weight: 550; }
+    a.comm-link-n2 { color: #eab308; font-weight: 550; }
+    a.comm-link-u1:hover, a.comm-link-g1:hover, a.comm-link-n1:hover,
+    a.comm-link-g2:hover, a.comm-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
+    }
+    /* Infrastructure buildings index — red gate tier colors on structure link only */
+    a.infra-link-u1 { color: #fee2e2; font-weight: 500; }
+    a.infra-link-g1 { color: #fecaca; font-weight: 500; }
+    a.infra-link-n1 { color: #fca5a5; font-weight: 500; }
+    a.infra-link-g2 { color: #f87171; font-weight: 550; }
+    a.infra-link-n2 { color: #ef4444; font-weight: 550; }
+    a.infra-link-u1:hover, a.infra-link-g1:hover, a.infra-link-n1:hover,
+    a.infra-link-g2:hover, a.infra-link-n2:hover {
+      filter: brightness(1.12);
+      text-decoration: underline;
     }
     .badge-imped { background: #b45309; }
     .badge-perk { background: #15803d; }
@@ -162,11 +222,23 @@
     </div>
     <div class="card">
       <h2>Structures using this resource</h2>
-      <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Badges mark impediments and perks.</p>
+      <p class="small muted">Same fields as on each structure page: mandatory / input / output / bonus resource. Resource names in Details link to resource pages when they match RESOURCES.CSV display names.</p>
       <h3>Mandatory regional resource</h3><p class='muted'>None</p>
-      <h3>Input (consumed)</h3><ul class='small'><li><a href="0228-spinning-mill-flax.html">Spinning Mill - Flax</a><br><span class="small muted">This structure outputs: Cloth</span></li><li><a href="0284-levy-camp.html">Levy Camp</a><br><span class="small muted">This structure outputs: —</span></li><li><a href="0309-warrior-assembly.html">Warrior Assembly</a><br><span class="small muted">This structure outputs: —</span></li></ul>
-      <h3>Output (produced)</h3><ul class='small'><li><a href="0006-flax-field.html">Flax Field</a> <span class="muted small">(Output_Resource)</span><br><span class="small muted">This structure inputs: —</span></li></ul>
-      <h3>Bonus resource (with that structure&#x27;s bonus output metrics)</h3><ul class='small'><li><a href="0003-shepherd-house.html">Shepherd House</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1</span><br><span class="small muted">This structure inputs: — · outputs: Wool x 1</span></li><li><a href="0011-poultry-farm.html">Poultry Farm</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1</span><br><span class="small muted">This structure inputs: — · outputs: Livestock x 1</span></li><li><a href="0012-goats-herd.html">Goats Herd</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1</span><br><span class="small muted">This structure inputs: — · outputs: Livestock x 1</span></li><li><a href="0019-manorial-demesne.html">Manorial Demesne</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0021-iqta-land-grant.html">Iqta&#x27; Land Grant</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0022-iqta-land-grant-poor.html">Iqta&#x27; Land Grant (Poor)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0023-iqta-land-grant-very-poor.html">Iqta&#x27; Land Grant (Very Poor)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0024-pastoral-council.html">Pastoral Council</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: —</span></li><li><a href="0047-seeds-storage.html">Seeds Storage</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Income 1</span><br><span class="small muted">This structure inputs: — · outputs: Nuts &amp; Seeds x 1</span></li><li><a href="0057-iqta-land-grant-major.html">Iqta&#x27; Land Grant (Major)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Steward 2</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0058-iqta-land-grant-m-poor.html">Iqta&#x27; Land Grant M. (Poor)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2, Bonus_Steward 1</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0059-iqta-land-grant-m-very-poor.html">Iqta&#x27; Land Grant M. (Very Poor)</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1</span><br><span class="small muted">This structure inputs: input: Livestock · outputs: Preserved Food x 1</span></li><li><a href="0774-landless-labourers.html">Landless Labourers</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Manpower 2</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0790-windmill.html">Windmill</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Food 6, Bonus_Steward 3</span><br><span class="small muted">This structure inputs: input: Sails · outputs: —</span></li><li><a href="0174-local-market.html">Local Market</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Income 3</span><br><span class="small muted">This structure inputs: input: Pottery · outputs: —</span></li><li><a href="0178-bakery.html">Bakery</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Food 3, Bonus_Income 2</span><br><span class="small muted">This structure inputs: input: Grain · outputs: —</span></li><li><a href="0179-communal-oven.html">Communal Oven</a> <span class="muted small">via BonusResource[0]</span><br><span class="small muted">Bonus outputs: Bonus_Food 1, Bonus_Income 1</span><br><span class="small muted">This structure inputs: input: Grain · outputs: —</span></li><li><a href="0206-fuero.html">Fuero</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 2, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0672-mercantile-burgh.html">Mercantile Burgh</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0816-cloth-guild.html">Cloth Guild</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_Income 5</span><br><span class="small muted">This structure inputs: input: Cloth · outputs: —</span></li><li><a href="0288-leather-workshop.html">Leather Workshop</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3</span><br><span class="small muted">This structure inputs: input: Leather · outputs: —</span></li><li><a href="0365-stable-master.html">Stable Master</a> <span class="muted small">via BonusResource[1]</span><br><span class="small muted">Bonus outputs: Bonus_MBP 3, Bonus_Infra 3</span><br><span class="small muted">This structure inputs: — · outputs: —</span></li><li><a href="0434-tithe-barn.html">Tithe Barn</a> <span class="muted small">via BonusResource[2]</span><br><span class="small muted">Bonus outputs: Bonus_Food 2, Bonus_Income 1, Bonus_Piety -2</span><br><span class="small muted">This structure inputs: input: Grain · outputs: —</span></li><li><a href="0512-village.html">Village</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Income 1, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Cloth · outputs: —</span></li><li><a href="0553-feudal-town.html">Feudal Town</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Cloth · outputs: —</span></li><li><a href="0554-medieval-town.html">Medieval Town</a> <span class="muted small">via BonusResource[3]</span><br><span class="small muted">Bonus outputs: Bonus_Income 2, Bonus_Manpower 1</span><br><span class="small muted">This structure inputs: input: Tiles &amp; Brick · outputs: —</span></li></ul>
+      <h3>Input (consumed)</h3>
+      <table class="small resource-usage-table">
+        <thead><tr><th>Structure</th><th>Details</th></tr></thead>
+        <tbody><tr><td><a class="struct-link link-job-commerce" href="0228-spinning-mill-flax.html">Spinning Mill - Flax</a></td><td><span class="small">This structure outputs: <a class="resource-inline-link" href="res-id-res-cloth.html">Cloth</a></span></td></tr><tr><td><a class="struct-link link-job-military" href="0284-levy-camp.html">Levy Camp</a></td><td><span class="small">This structure outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0309-warrior-assembly.html">Warrior Assembly</a></td><td><span class="small">This structure outputs: —</span></td></tr></tbody>
+      </table>
+      <h3>Output (produced)</h3>
+      <table class="small resource-usage-table">
+        <thead><tr><th>Structure</th><th>Output field</th><th>Details</th></tr></thead>
+        <tbody><tr><td><a class="struct-link link-job-agri" href="0006-flax-field.html">Flax Field</a></td><td><span class="small">Output_Resource</span></td><td><span class="muted">—</span></td></tr></tbody>
+      </table>
+      <h3>Bonus resource</h3>
+      <table class="small resource-usage-table">
+        <thead><tr><th>Structure</th><th>Bonus outputs</th><th>Details</th></tr></thead>
+        <tbody><tr><td><a class="struct-link link-job-agri" href="0003-shepherd-house.html">Shepherd House</a></td><td><span class="small">Food 1</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-wool.html">Wool</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0011-poultry-farm.html">Poultry Farm</a></td><td><span class="small">Food 1</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0012-goats-herd.html">Goats Herd</a></td><td><span class="small">Food 1</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0019-manorial-demesne.html">Manorial Demesne</a></td><td><span class="small">Food 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0021-iqta-land-grant.html">Iqta&#x27; Land Grant</a></td><td><span class="small">Food 3</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0022-iqta-land-grant-poor.html">Iqta&#x27; Land Grant (Poor)</a></td><td><span class="small">Food 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0023-iqta-land-grant-very-poor.html">Iqta&#x27; Land Grant (Very Poor)</a></td><td><span class="small">Food 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0024-pastoral-council.html">Pastoral Council</a></td><td><span class="small">Food 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0047-seeds-storage.html">Seeds Storage</a></td><td><span class="small">Food 3, Income 1</span></td><td><span class="small">— · outputs: <a class="resource-inline-link" href="res-id-res-nutsseeds.html">Nuts &amp; Seeds</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0057-iqta-land-grant-major.html">Iqta&#x27; Land Grant (Major)</a></td><td><span class="small">Food 3, Steward 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0058-iqta-land-grant-m-poor.html">Iqta&#x27; Land Grant M. (Poor)</a></td><td><span class="small">Food 2, Steward 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0059-iqta-land-grant-m-very-poor.html">Iqta&#x27; Land Grant M. (Very Poor)</a></td><td><span class="small">Food 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-livestock.html">Livestock</a> · outputs: <a class="resource-inline-link" href="res-id-res-preservedfood.html">Preserved Food</a> x 1</span></td></tr><tr><td><a class="struct-link link-job-agri" href="0774-landless-labourers.html">Landless Labourers</a></td><td><span class="small">Manpower 2</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-infra" href="0790-windmill.html">Windmill</a></td><td><span class="small">Food 6, Steward 3</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-sails.html">Sails</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-commerce" href="0174-local-market.html">Local Market</a></td><td><span class="small">Income 3</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-pottery.html">Pottery</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-commerce" href="0178-bakery.html">Bakery</a></td><td><span class="small">Food 3, Income 2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-grain.html">Grain</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-commerce" href="0179-communal-oven.html">Communal Oven</a></td><td><span class="small">Food 1, Income 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-grain.html">Grain</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-commerce" href="0206-fuero.html">Fuero</a></td><td><span class="small">MBP 2, Manpower 1</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-commerce" href="0672-mercantile-burgh.html">Mercantile Burgh</a></td><td><span class="small">Income 2</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-commerce" href="0816-cloth-guild.html">Cloth Guild</a></td><td><span class="small">Income 5</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-cloth.html">Cloth</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0288-leather-workshop.html">Leather Workshop</a></td><td><span class="small">MBP 3</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-leather.html">Leather</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-military" href="0365-stable-master.html">Stable Master</a></td><td><span class="small">MBP 3, Infra 3</span></td><td><span class="small">— · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-piety" href="0434-tithe-barn.html">Tithe Barn</a></td><td><span class="small">Food 2, Income 1, Piety -2</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-grain.html">Grain</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0512-village.html">Village</a></td><td><span class="small">Income 1, Manpower 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-cloth.html">Cloth</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0553-feudal-town.html">Feudal Town</a></td><td><span class="small">Income 2, Manpower 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-cloth.html">Cloth</a> · outputs: —</span></td></tr><tr><td><a class="struct-link link-job-steward" href="0554-medieval-town.html">Medieval Town</a></td><td><span class="small">Income 2, Manpower 1</span></td><td><span class="small">input: <a class="resource-inline-link" href="res-id-res-tilesbrick.html">Tiles &amp; Brick</a> · outputs: —</span></td></tr></tbody>
+      </table>
     </div>
 
   </div>
